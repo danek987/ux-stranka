@@ -3,32 +3,189 @@
 */
 :root {
     /* Typografia */
-    --font-family-primary: "Inter", system-ui, sans-serif;
+    --font-family-primary: "Inter", sans-serif;
+    --font-family-mono: "JetBrains Mono", monospace;
 
-    --font-display-48: 48px;
-    --font-h1-32: 32px;
-    --font-h2-24: 24px;
-    --font-body-large-18: 18px;
-    --font-body-medium-16: 16px;
-    --font-body-small-14: 14px;
+    --font-display-48: 3rem;          /* 48px */
+    --font-h1-32: 2rem;               /* 32px */
+    --font-h2-24: 1.5rem;             /* 24px */
+    --font-h3-20: 1.25rem;            /* 20px */
+    --font-body-large-18: 1.125rem;   /* 18px */
+    --font-body-medium-16: 1rem;      /* 16px */
+    --font-body-small-14: 0.875rem;   /* 14px */
+    --font-label-12: 0.75rem;         /* 12px */
+    --font-chart-8: 0.5rem;           /* 8px */
+    --font-chart-10: 0.625rem;        /* 10px */
+    --font-jetBrains-16: 1rem;        /* 16px */
+    --font-jetBrains-12: 0.75rem;     /* 12px */
+
+    --weight-bold: 700;
+    --weight-semibold: 600;
+    --weight-medium: 500;
+    --weight-regular: 400;
 
     /* Farby - uprav si podla Figmy */
-    --color-primary: #4b6584;
-    --color-secondary: #82c0ff;
-    --color-background: #f5f7fb;
-    --color-card-bg: #ffffff;
-    --color-card-border: #e2e8f0;
+    --color-primary: #516687;
+    --color-secondary: #ADD9ED;
+    --color-background: #F6F8FB;
 
-    --text-primary: #0f172a;
-    --text-secondary: #6b7280;
-    --text-on-primary: #ffffff;
+    --color-card-bg: #ffffff;
+    --color-card-border: #E5E6E6;
+    --color-card-bg2: #F4F4F4;
+
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --text-cards: #757575;
+    --text-cards2: #B3B3B3;
+    --text-whiteText: #F5F5F5;
+
+    --color-black-100: #1E1E1E;
+    --color-gray-100: #B3B3B3;
+    --color-gray-200: #5A5A5A;
+    --color-gray-300: #444444;
+    --color-gray-400: #222121;
+    --color-white-100: #ffffff;
+    --color-white-200: #f4f4f4;
+    --color-white-300: #EAEAEA;
+
+    --color-blue-input: #F1F5F9;
+    --color-gray-input: #ECECF0;
+
+    --classification-adaptivne: #9094EC;
+    --classification-perfektivne: #7AEE93;
+    --classification-korektivne: #DD9494;
+    --classification-admin: #9CA3AF;
+    --color-green: #22C55E;
+    --color-orange: #F59E0B;
+    --color-red: #EF4444;
+
+    --color-platny: #09FF00;       /* Platny token  #2ea45f*/
+    --color-neplatny: #FF0000;     /* Neplatny token #c05959 */
+
+    --lh-auto: normal;
+    --lh-tight: 110%;
+    --lh-normal: 140%;
+    --lh-relaxed: 150%;
 
     /* Layout */
-    --radius-card: 24px;
-    --radius-button: 8px;
+    --radius-card-border: 2.25rem;
+    --card-padding: 1.88rem;
+    --radius-button-border: 0.5rem;
     --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
 
-    --spacing-page: 24px;
+    --spacing-page: 1.56rem;
+}
+
+/* fonty podla figmy*/
+/* Display-48 */
+.display-48 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-display-48);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+/* H1-32 */
+.h1-32 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-h1-32);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+/* H2-24 */
+.h2-24 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-h2-24);
+    font-weight: var(--weight-semibold);
+    line-height: var(--lh-auto);
+}
+
+/* H3-20 */
+.h3-20 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-h3-20);
+    font-weight: var(--weight-semibold);
+    line-height: var(--lh-auto);
+}
+
+/* BodyLarge-18 */
+.body-large-18 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-body-large-18);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-auto);
+}
+
+/* BodyMedium-16 Auto */
+.body-medium-16-auto {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-body-medium-16);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-auto);
+}
+
+/* BodyMedium-16 (16/24) */
+.body-medium-16 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-body-medium-16);
+    font-weight: var(--weight-regular);
+    line-height: 1.5rem;
+}
+
+/* BodyMedium-16 Bold */
+.body-medium-16-bold {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-body-medium-16);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+/* BodySmall-14 */
+.body-small-14 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-body-small-14);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-auto);
+}
+
+/* Label-12 */
+.label-12 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-label-12);
+    font-weight: var(--weight-medium);
+    line-height: var(--lh-auto);
+}
+
+/* Chart-8 */
+.chart-8 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-chart-8);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+/* Chart-10 */
+.chart-10 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-chart-10);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+/* JetBrains Mono styles */
+.mono-16 {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-jetBrains-16);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
+}
+
+.mono-12 {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-jetBrains-12);
+    font-weight: var(--weight-bold);
+    line-height: var(--lh-auto);
 }
 
 /*-----------------------------*/
@@ -62,7 +219,7 @@ body {
     gap: 16px;
     padding: 8px var(--spacing-page);
     background-color: var(--color-primary);
-    color: var(--text-on-primary);
+    color: var(--text-primary);
 }
 
 /* Lava a prava cast headera */
@@ -76,7 +233,7 @@ body {
 .menu-button {
     background: transparent;
     border: none;
-    color: var(--text-on-primary);
+    color: var(--text-primary);
     font-size: var(--font-body-medium-16);
     cursor: pointer;
 }
@@ -105,26 +262,25 @@ body {
    Tlacidla
 */
 
+
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 10px 16px;
-    border-radius: var(--radius-button);
+    border-radius: var(--radius-button-border);
     border: none;
-    font-size: var(--font-body-medium-16);
-    font-weight: 600;
     cursor: pointer;
 }
 
 .btn-primary {
     background-color: var(--color-primary);
-    color: var(--text-on-primary);
+    color: var(--text-whiteText);
 }
 
 .btn-secondary {
     background-color: var(--color-secondary);
-    color: var(--text-on-primary);
+    color: var(--text-primary);
 }
 
 /* Viditelny focus pre pristupnost */
@@ -141,41 +297,37 @@ body {
 */
 
 .home {
-    min-height: calc(100vh - 56px);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding: 64px var(--spacing-page);
+    padding: 0 var(--spacing-page);
 }
 
 /* Karta v strede */
 .home-card {
     background-color: var(--color-card-bg);
-    border-radius: var(--radius-card);
+    border-radius: var(--radius-card-border);
     box-shadow: var(--shadow-card);
     border: 1px solid var(--color-card-border);
     max-width: 700px;
     width: 100%;
     text-align: center;
-    padding: 40px 64px;
+    padding: var(--card-padding);
 }
 
-.home-card h1 {
-    font-size: var(--font-h1-32);
-    margin: 0 0 32px;
+.home h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: var(--spacing-page);
 }
 
 /* Vertikalne menu tlacidiel */
 .home-actions {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
 }
 
-.home-actions .btn-primary {
-    width: 100%;
-    font-size: var(--font-body-large-18);
-}
 
 /*
    Responzivita - media queries
@@ -184,11 +336,11 @@ body {
 /* Tablet */
 @media (max-width: 900px) {
     .topbar-nav {
-        gap: 16px;
+        gap: 1rem;
     }
 
     .home-card {
-        padding: 32px 24px;
+        padding: 2rem 1.5rem;
     }
 }
 
@@ -202,20 +354,20 @@ body {
     .topbar-nav {
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 8px 16px;
+        gap: 0.5rem 1rem;
     }
 
     .home {
-        padding: 32px 16px;
+        padding: 2rem 1rem;
     }
 
     .home-card {
-        padding: 24px 16px;
-        border-radius: 16px;
+        padding: var(--card-padding);
+        border-radius: 1rem;
     }
 
-    .home-card h1 {
-        font-size: var(--font-h2-24);
+    .home h1 {
+        font-size: var(--font-h1-32);
     }
 
     .nav-link {
