@@ -1,0 +1,28 @@
+.info-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-card-border);
+    box-shadow: var(--shadow-card);
+
+    padding: 1.2rem 1.6rem;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Nadpis */
+.info-title {
+    font-family: var(--font-family-primary);
+    font-weight: var(--weight-bold);
+    color: var(--text-primary);
+}
+
+/* Hodnota */
+.info-value {
+    margin-top: 0.4rem;
+    font-family: var(--font-family-primary);
+    font-weight: var(--weight-regular);
+    color: var(--text-secondary);
+}

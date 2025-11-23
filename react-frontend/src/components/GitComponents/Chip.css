@@ -1,0 +1,44 @@
+/* Obal komponentu */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    background-color: var(--color-white-200);
+    border-radius: 1rem;
+    padding: 0.4rem 0.8rem;
+
+    box-shadow: var(--shadow-card);
+}
+
+/* Text v chip – styl .mono-16 */
+.chip-text {
+    color: var(--text-secondary);
+}
+
+/* Tlacidlo X */
+.chip-remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--color-red);
+
+    padding: 0.1rem;
+    border-radius: 0.3rem;
+
+    transition: color 0.15s ease, transform 0.1s ease;
+}
+
+/* Hover */
+.chip-remove:hover {
+    color: #b50000;
+    transform: scale(1.1);
+}
+
+.chip-remove:focus-visible {
+    outline: 2px solid #1d9bf0;
+    outline-offset: 2px;
+}

@@ -1,0 +1,23 @@
+/* Jazykovy tag */
+.language-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+
+    background-color: var(--color-card-bg2);
+    box-shadow: var(--shadow-card);
+}
+
+/* Ikonka jazyka(obrazok) */
+.language-tag-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.language-tag-text {
+    color: var(--text-secondary);
+}

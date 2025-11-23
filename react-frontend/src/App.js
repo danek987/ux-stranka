@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
-import Menu from "./components/Menu";
-import Index from "./pages/index";
+import Menu from "./components/Menu/Menu";
+import MenuPage from "./pages/MenuPage";
 import Footer from "./components/Footer";
 
 function App() {
   return (
       <div className="App">
         <Menu />
-        <Index />
+        <MenuPage />
         <Footer />
       </div>
   );

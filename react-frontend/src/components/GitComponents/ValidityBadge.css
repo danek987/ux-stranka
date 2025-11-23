@@ -1,0 +1,23 @@
+.validity-badge {
+    width: 100%;
+    text-align: center;
+
+    padding: 1.2rem 1rem;
+    border-radius: 1.5rem;
+
+    font-family: var(--font-family-primary);
+    font-size: var(--font-h1-32);
+    font-weight: var(--weight-bold);
+
+    color: var(--text-primary);
+}
+
+/* PLATNY */
+.is-valid {
+    background-color: var(--color-platny);
+}
+
+/* NEPLATNY */
+.is-invalid {
+    background-color: var(--color-neplatny);
+}

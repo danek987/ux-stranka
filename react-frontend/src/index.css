@@ -59,8 +59,10 @@
   --color-orange: #F59E0B;
   --color-red: #EF4444;
 
-  --color-platny: #09FF00;
-  --color-neplatny: #FF0000;
+  /*--color-platny: #09FF00;*/
+  /*--color-neplatny: #FF0000;*/
+  --color-platny: rgba(9, 255, 0, 0.4);
+  --color-neplatny: rgba(255, 0, 0, 0.4);
 
   --lh-auto: normal;
   --lh-tight: 110%;
