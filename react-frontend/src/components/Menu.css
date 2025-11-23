@@ -1,0 +1,72 @@
+/* horny panel (header) */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px var(--spacing-page);
+    background-color: var(--color-primary);
+    color: var(--text-primary);
+}
+
+/* lava a prava cast headera */
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* tlacidlo MENU */
+.menu-button {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: var(--font-body-medium-16);
+    cursor: pointer;
+}
+
+/* navigacne linky v strede */
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex: 1;
+}
+
+.nav-link {
+    font-size: var(--font-body-medium-16);
+    text-decoration: none;
+    opacity: 0.9;
+    color: inherit;
+}
+
+.nav-link.is-active {
+    font-weight: 600;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .topbar-nav {
+        gap: 1rem;
+    }
+}
+
+/* mobil */
+@media (max-width: 600px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topbar-nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.5rem 1rem;
+    }
+
+    .nav-link {
+        font-size: var(--font-body-small-14);
+    }
+}
