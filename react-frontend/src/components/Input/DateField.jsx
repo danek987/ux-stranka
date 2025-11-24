@@ -7,7 +7,7 @@ const DateField = ({ label, id, ...props }) => {
     return (
         <div className="field">
             {label && (
-                <label className="field-label label-12" htmlFor={dateId}>
+                <label className="field-label body-medium-16-bold" htmlFor={dateId}>
                     {label}
                 </label>
             )}
@@ -15,10 +15,9 @@ const DateField = ({ label, id, ...props }) => {
                 <input
                     id={dateId}
                     type="datetime-local"
-                    className="field-date-input"
+                    className="field-date-input body-medium-16-auto"
                     {...props}
                 />
-                <span className="date-icon">📅</span>
             </div>
         </div>
     );

@@ -8,19 +8,18 @@ const SelectField = ({ label, id, options = [], ...props }) => {
     return (
         <div className="field">
             {label && (
-                <label className="field-label label-12" htmlFor={selectId}>
+                <label className="field-label body-medium-16-bold" htmlFor={selectId}>
                     {label}
                 </label>
             )}
             <div className="select-wrapper">
-                <select id={selectId} className="field-select" {...props}>
+                <select id={selectId} className="field-select body-medium-16-auto" {...props}>
                     {options.map((opt) => (
                         <option key={opt.value} value={opt.value}>
                             {opt.label}
                         </option>
                     ))}
                 </select>
-                <span className="select-arrow">⌄</span>
             </div>
         </div>
     );

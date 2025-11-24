@@ -1,0 +1,34 @@
+.repo-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-card-bg2);
+    border: 1px solid var(--color-card-border);
+    border-radius: 0.625rem;
+    padding: 1rem;
+
+    box-shadow: var(--shadow-card);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* hover */
+/*.repo-card:hover {*/
+/*    transform: translateY(-2px);*/
+/*    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);*/
+/*}*/
+
+/* ikona */
+.repo-icon {
+    font-size: 1.875rem;
+    color: var(--color-black-100);
+}
+
+/* text */
+.repo-title {
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+}
+
+.repo-count {
+    margin-top: 0.375rem;
+}

@@ -7,7 +7,7 @@ const ValidityBadge = ({ status = "platny" }) => {
 
     return (
         <div
-            className={`validity-badge ${isValid ? "is-valid" : "is-invalid"}`}
+            className={`h1-32 validity-badge ${isValid ? "is-valid" : "is-invalid" }`}
         >
             {isValid ? "Platny" : "Neplatny"}
         </div>

@@ -2,11 +2,9 @@
 .language-tag {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.35rem 0.9rem;
-    border-radius: 9999px;
-
+    gap: 0.625rem;
+    padding: 0.375rem 0.25rem;
+    border-radius: 0.5rem;
     background-color: var(--color-card-bg2);
     box-shadow: var(--shadow-card);
 }

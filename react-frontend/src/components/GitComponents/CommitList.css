@@ -1,0 +1,50 @@
+.commit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* riadok */
+.commit-row {
+    display: grid;
+    grid-template-columns: 1rem 1.5rem 1fr;
+    align-items: center;
+}
+
+/* gulka pri pismenkach */
+.commit-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+}
+
+/* label P / A / K / O */
+.commit-label {
+    color: var(--text-primary);
+}
+
+/* bar */
+.commit-bar {
+    position: relative;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: 0.0625rem;
+    height: 0.75rem;
+    overflow: hidden;
+}
+
+/* vyplnena cast */
+.commit-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 0.0625rem 0 0 0.0625rem;
+}
+
+/* text na bare */
+.commit-bar-text {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-primary);
+}

@@ -8,13 +8,13 @@ const TextInput = ({ label, id, ...props }) => {
     return (
         <div className="field">
             {label && (
-                <label className="field-label label-12" htmlFor={inputId}>
+                <label className="field-label body-medium-16-bold" htmlFor={inputId}>
                     {label}
                 </label>
             )}
             <input
                 id={inputId}
-                className="field-input"
+                className="field-input body-medium-16-auto"
                 {...props}
             />
         </div>

@@ -7,13 +7,13 @@ const TextAreaField = ({ label, id, rows = 4, ...props }) => {
     return (
         <div className="field">
             {label && (
-                <label className="field-label label-12" htmlFor={textId}>
+                <label className="field-label body-medium-16-bold" htmlFor={textId}>
                     {label}
                 </label>
             )}
             <textarea
                 id={textId}
-                className="field-textarea"
+                className="field-textarea body-medium-16-auto"
                 rows={rows}
                 {...props}
             />
