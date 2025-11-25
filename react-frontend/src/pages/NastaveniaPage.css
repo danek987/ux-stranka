@@ -1,0 +1,113 @@
+/* hlavne rozlozenie nastaveni */
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 var(--spacing-page);
+}
+
+.settings h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: 1.75rem;
+}
+
+/* karta sekcie (zmena hesla, aliasy, zmazanie uctu) */
+.settings-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-card-border);
+    max-width: 860px;
+    width: 100%;
+    padding: 1.75rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.settings-section-title {
+    margin: 0;
+}
+
+/* formular vnutri karty */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* tlacidlo v karte */
+.settings-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* aliasy – chips */
+.settings-alias-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* sekcia zmazanie uctu */
+.settings-card-delete {
+    gap: 1rem;
+}
+
+.settings-delete-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings-delete-check input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--color-red);
+}
+
+/* cervene tlacidlo Zmazat */
+.settings-delete-btn {
+    width: 100%;
+    background-color: var(--color-red);
+    color: var(--text-whiteText);
+    margin-top: 0.25rem;
+}
+
+.settings-delete-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* hover efekt pre zmazat tlacidlo */
+.settings-delete-btn:not(:disabled):hover {
+    background-color: #dc2626; /* tmavsia cervena */
+}
+
+/* karta preferencie – vacsi textovy vstup */
+.settings-card-preferences textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.settings-card-preferences .settings-submit {
+    width: 100%;
+}
+
+/* responsivita pre mensie displeje */
+@media (max-width: 900px) {
+    .settings-card {
+        padding: 1.5rem 1.25rem 1.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .settings {
+        padding: 2rem 1rem;
+    }
+
+    .settings-card {
+        border-radius: 1rem;
+    }
+}

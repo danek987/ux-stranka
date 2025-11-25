@@ -1,55 +1,62 @@
-/* hlavna stranka - rozlozenie */
-
-.home {
+/* rozlozenie stranky vyhladat */
+.search {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 var(--spacing-page);
+    padding: 0 2.5rem;
 }
 
-/* karta v strede */
-.home-card {
+.search h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: var(--spacing-page);
+}
+
+/* karta uprostred stranky */
+.search-card {
     background-color: var(--color-card-bg);
     border-radius: var(--radius-card-border);
     box-shadow: var(--shadow-card);
     border: 1px solid var(--color-card-border);
     max-width: 700px;
     width: 100%;
-    text-align: center;
     padding: var(--card-padding);
+    text-align: center;
 }
 
-.home h1 {
-    margin-top: var(--spacing-page);
-    margin-bottom: var(--spacing-page);
+/* maly text nad inputom */
+.search-subtitle {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
-/* vertikalne menu tlacidiel */
-.home-actions {
+/* formular s inputom a tlacidlom */
+.search-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+/* tlacidlo vyhladat cez celu sirku */
+.search-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 /* tablet */
 @media (max-width: 900px) {
-    .home-card {
+    .search-card {
         padding: 2rem 1.5rem;
     }
 }
 
 /* mobil */
 @media (max-width: 600px) {
-    .home {
+    .search {
         padding: 2rem 1rem;
     }
 
-    .home-card {
+    .search-card {
         padding: var(--card-padding);
         border-radius: 1rem;
-    }
-
-    .home h1 {
-        font-size: var(--font-h1-32);
     }
 }

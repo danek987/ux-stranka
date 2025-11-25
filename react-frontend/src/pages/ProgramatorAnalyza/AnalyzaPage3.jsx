@@ -1,0 +1,181 @@
+import React, { useState } from "react";
+import "./AnalyzaPage3.css";
+import "./AnalyzaPage2.css";
+import Button from "../../components/Button/Button";
+import ValidityBadge from "../../components/GitComponents/ValidityBadge";
+import RepoCardAnalyze from "../../components/GitComponents/RepoCardAnalyze";
+
+// pole s repozitarmi (konfiguracia)
+const repos = [
+    {
+        id: "zadanie-programovanie",
+        title: "Zadanie programovanie",
+        commits: 115
+    },
+    {
+        id: "todo-app",
+        title: "TO DO App",
+        commits: 35
+    },
+    {
+        id: "webstranka",
+        title: "WebStranka",
+        commits: 125,
+        language: "HTML"
+    },
+    {
+        id: "zadanie-usaa",
+        title: "Zadanie USAA",
+        commits: 268
+    },
+    {
+        id: "zadanie-programovanie2",
+        title: "Zadanie programovanie2",
+        commits: 10,
+        language: "Java"
+    },
+    {
+        id: "python-ucenie",
+        title: "Python učenie",
+        commits: 158
+    },
+    {
+        id: "react-app",
+        title: "React App",
+        commits: 78
+    }
+];
+
+const AnalyzaPage3 = () => {
+    // stav vybratych repozitarov (id -> true/false)
+    const [selectedRepos, setSelectedRepos] = useState({});
+
+    // prepnutie vyberu konkretneho repozitara
+    const toggleRepo = (id) => {
+        setSelectedRepos((prev) => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
+
+    // vypocet alokovanych commitov zo vsetkych vybratych repozitarov
+    const allocatedCommits = repos.reduce((sum, repo) => {
+        if (selectedRepos[repo.id]) {
+            return sum + repo.commits;
+        }
+        return sum;
+    }, 0);
+
+    return (
+        <main className="analyza2-page">
+            <h1 className="analyza2-title display-48">Generovanie profilu</h1>
+
+            <div className="analyza2-layout">
+                {/* lavy panel */}
+                <section className="analyza2-left">
+                    {/* GitHub blok */}
+                    <div className="provider-block">
+                        <div className="provider-main">
+                            <span className="provider-name h1-32">GitHub</span>
+                            <span
+                                className="provider-icon provider-icon-github"
+                                aria-hidden="true"
+                            />
+                        </div>
+
+                        <ValidityBadge className="badge" status="platny" />
+                    </div>
+
+                    {/* GitLab blok */}
+                    <div className="provider-block">
+                        <div className="provider-main">
+                            <span className="provider-name h1-32">GitLab</span>
+                            <span
+                                className="provider-icon provider-icon-gitlab"
+                                aria-hidden="true"
+                            />
+                        </div>
+
+                        <ValidityBadge status="neplatny" />
+                    </div>
+
+                    {/* spolocne tlacidlo dole */}
+                    <Button variant="primary">
+                        Načitať
+                    </Button>
+                </section>
+
+                {/* pravy panel so zoznamom repozitarov */}
+                <section className="analyza2-right analyza-loaded-right">
+                    {/* horna cast s nastaveniami */}
+                    <div className="analyza-loaded-top">
+                        <div className="analyza-loaded-commits body-medium-16-auto">
+                            Počet alokovaných commitov: {allocatedCommits} / 350
+                        </div>
+
+                        <div className="analyza-loaded-options body-medium-16-auto">
+                            <label className="loaded-option">
+                                <input type="checkbox" defaultChecked />
+                                <span>Random vzorka</span>
+                            </label>
+
+                            <label className="loaded-option">
+                                <input type="checkbox" name="limitMode" />
+                                <span>Limit</span>
+                            </label>
+
+                            <div className="loaded-slider">
+                                <span className="loaded-slider-label">
+                                    Limit na repozitár
+                                </span>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    defaultValue="0"
+                                />
+                                <span className="loaded-slider-range body-small-14">
+                                    0–100
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* stredna cast s textom a tlacidlom Spustit */}
+                    <div className="analyza-loaded-center">
+                        <p className="body-medium-16-auto analyza-loaded-hint">
+                            Je potrebné označiť repozitáre k analýze
+                            <br />
+                            kliknutím na karty repozitárov
+                        </p>
+
+                        <Button size="large" variant="primary">
+                            Spustiť
+                        </Button>
+                    </div>
+
+                    {/* riadok so sortovanim */}
+                    <div className="analyza-loaded-sort body-medium-16-auto">
+                        Zoradiť podľa počtu commitov ↑
+                    </div>
+
+                    {/* zoznam repozitarov cez komponent RepoCardAnalyze */}
+                    <div className="analyza-loaded-repos">
+                        {repos.map((repo) => (
+                            <RepoCardAnalyze
+                                key={repo.id}
+                                title={repo.title}
+                                commits={repo.commits}
+                                language={repo.language}
+                                selected={!!selectedRepos[repo.id]}
+                                onClick={() => toggleRepo(repo.id)}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </div>
+        </main>
+    );
+};
+
+export default AnalyzaPage3;

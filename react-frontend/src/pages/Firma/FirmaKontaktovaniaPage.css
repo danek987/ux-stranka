@@ -1,0 +1,63 @@
+.fk-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+/* nadpis */
+.fk-page h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: 2rem;
+}
+
+/* zoradenie podľa dátumu */
+.fk-sort {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.fk-sort-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.fk-sort-btn:hover {
+    text-decoration: underline;
+}
+
+/* grid kariet – presne ako na fotke */
+.fk-grid {
+    width: 100%;
+    max-width: 950px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* tlacidlo Menu naspodku */
+.fk-menu {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.fk-menu button {
+    width: 140px;
+}
+
+/* mobil */
+@media (max-width: 600px) {
+    .fk-page {
+        padding: 2rem 1rem;
+    }
+
+    .fk-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -3,22 +3,25 @@ import "./NastaveniaPage.css";
 
 import Button from "../components/Button/Button";
 import TextInput from "../components/Input/TextInput";
+import TextField from "../components/Input/TextAreaField";
 import Chip from "../components/GitComponents/Chip";
 
-const NastaveniaPage = () => {
+const NastaveniaPageFirma = () => {
     // stav pre zmenu hesla
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
 
-    // stav pre aliasy
-    const [aliases, setAliases] = useState([
-        "Meno123",
-        "MenoGit",
-        "AliasJa",
-        "AbcDefGit",
-        "GitMeno145",
+    // stav pre technologie
+    const [technologies, setTechnologies] = useState([
+        "Java",
+        "React",
+        "C#",
+        "C++",
     ]);
-    const [newAlias, setNewAlias] = useState("");
+    const [newTechnology, setNewTechnology] = useState("");
+
+    // stav pre preferencie
+    const [preferences, setPreferences] = useState("");
 
     // stav pre zmazanie uctu
     const [confirmDelete, setConfirmDelete] = useState(false);
@@ -37,31 +40,41 @@ const NastaveniaPage = () => {
         setNewPassword("");
     };
 
-    // pridanie aliasu
-    const handleAddAlias = (event) => {
+    // pridanie technologie
+    const handleAddTechnology = (event) => {
         event.preventDefault();
 
-        const trimmed = newAlias.trim();
+        const trimmed = newTechnology.trim();
         if (!trimmed) return;
 
         // nepovolit duplicity
-        if (!aliases.includes(trimmed)) {
-            setAliases((prev) => [...prev, trimmed]);
+        if (!technologies.includes(trimmed)) {
+            setTechnologies((prev) => [...prev, trimmed]);
         }
 
-        setNewAlias("");
+        setNewTechnology("");
     };
 
-    // odstranenie aliasu
-    const handleRemoveAlias = (aliasToRemove) => {
-        setAliases((prev) => prev.filter((alias) => alias !== aliasToRemove));
+    // odstranenie technologie
+    const handleRemoveTechnology = (technologyToRemove) => {
+        setTechnologies((prev) =>
+            prev.filter((tech) => tech !== technologyToRemove)
+        );
+    };
+
+    // ulozenie preferencii
+    const handlePreferencesSubmit = (event) => {
+        event.preventDefault();
+
+        console.log("Ulozit preferencie", preferences);
+        // ak chces, mozes po uspesnom ulozeni vycistit:
+        // setPreferences("");
     };
 
     // zmazanie uctu
     const handleDeleteAccount = () => {
         if (!confirmDelete) return;
 
-        // sem pride realne API volanie
         console.log("Zmazat ucet");
     };
 
@@ -101,26 +114,26 @@ const NastaveniaPage = () => {
                 </form>
             </section>
 
-            {/* sekcia aliasy */}
+            {/* sekcia technologie */}
             <section className="settings-card">
-                <h2 className="h2-24 settings-section-title">Aliasy</h2>
+                <h2 className="h2-24 settings-section-title">Technológie</h2>
 
                 <div className="settings-alias-list">
-                    {aliases.map((alias, index) => (
+                    {technologies.map((tech, index) => (
                         <Chip
-                            key={`${alias}-${index}`}
-                            text={alias}
-                            onRemove={() => handleRemoveAlias(alias)}
+                            key={`${tech}-${index}`}
+                            text={tech}
+                            onRemove={() => handleRemoveTechnology(tech)}
                         />
                     ))}
                 </div>
 
-                <form className="settings-form" onSubmit={handleAddAlias}>
+                <form className="settings-form" onSubmit={handleAddTechnology}>
                     <TextInput
-                        label="Pridanie aliasu"
-                        placeholder="MenoGit123"
-                        value={newAlias}
-                        onChange={(e) => setNewAlias(e.target.value)}
+                        label="Pridanie technológie"
+                        placeholder="Sem napíšte technológiu"
+                        value={newTechnology}
+                        onChange={(e) => setNewTechnology(e.target.value)}
                     />
 
                     <Button
@@ -129,7 +142,33 @@ const NastaveniaPage = () => {
                         size="large"
                         className="settings-submit"
                     >
-                        Pridať alias
+                        Pridať
+                    </Button>
+                </form>
+            </section>
+
+            {/* sekcia preferencie */}
+            <section className="settings-card settings-card-preferences">
+                <h2 className="h2-24 settings-section-title">Preferencie</h2>
+
+                <form
+                    className="settings-form"
+                    onSubmit={handlePreferencesSubmit}
+                >
+                    <TextField
+                        label="Preferencie"
+                        placeholder="Sem napíšte preferencie firmy"
+                        value={preferences}
+                        onChange={(e) => setPreferences(e.target.value)}
+                    />
+
+                    <Button
+                        type="submit"
+                        variant="primary"
+                        size="large"
+                        className="settings-submit"
+                    >
+                        Uložiť
                     </Button>
                 </form>
             </section>
@@ -162,4 +201,4 @@ const NastaveniaPage = () => {
     );
 };
 
-export default NastaveniaPage;
+export default NastaveniaPageFirma;

@@ -1,0 +1,49 @@
+import React from "react";
+import "../ProgramatorMenu/MenuPage.css"; // zdieľa rovnaké CSS
+import Button from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
+
+const FirmaMenuPage = () => {
+    const navigate = useNavigate();
+
+    return (
+        <main className="home">
+            <h1 id="home-title" className="display-48">
+                Štýlové profily
+            </h1>
+
+            <section className="home-card" aria-labelledby="home-title">
+                <div className="home-actions">
+                    <Button
+                        variant="primary"
+                        size="large"
+                        className="home-btn"
+                        onClick={() => navigate("/vyhladat")}
+                    >
+                        Vyhľadať programátora
+                    </Button>
+
+                    <Button
+                        variant="primary"
+                        size="large"
+                        className="home-btn"
+                        onClick={() => navigate("/kontaktovania")}
+                    >
+                        Kontaktovania
+                    </Button>
+
+                    <Button
+                        variant="primary"
+                        size="large"
+                        className="home-btn"
+                        onClick={() => navigate("/nastavenia")}
+                    >
+                        Nastavenia
+                    </Button>
+                </div>
+            </section>
+        </main>
+    );
+};
+
+export default FirmaMenuPage;

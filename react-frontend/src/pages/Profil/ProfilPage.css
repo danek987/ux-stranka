@@ -1,0 +1,288 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.profile > h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: 2rem;
+}
+
+/* hlavny grid */
+.profile-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.1fr) minmax(360px, 1.6fr);
+    grid-template-rows: auto auto;
+    gap: 1.5rem 1.5rem;
+    max-width: 1040px;
+    width: 100%;
+}
+
+/* zakladna karta */
+.profile-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-card-border);
+    padding: 1.75rem 2rem;
+}
+
+/* zakladne info */
+.profile-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.profile-id {
+    text-align: left;
+}
+
+.profile-github {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-github-icon {
+    font-family: "Font Awesome 5 Brands", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* cervene badge s nazvom styloveho profilu */
+.profile-style-badge {
+    margin-top: 0.5rem;
+    align-self: stretch;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: #e58c8c;
+    color: #ffffff;
+}
+
+/* donut + legenda */
+.profile-donut-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* kruhovy graf (iba CSS, staticky) */
+.profile-donut-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-donut {
+    width: 190px;
+    height: 190px;
+    border-radius: 999px;
+    background: conic-gradient(
+            var(--classification-korektivne) 0 57%,
+            var(--classification-perfektivne) 57% 77%,
+            var(--classification-adaptivne) 77% 89%,
+            var(--classification-admin) 89% 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-donut-inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+    background-color: var(--color-card-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.profile-donut-number {
+    font-weight: 700;
+}
+
+.profile-donut-label {
+    color: var(--text-secondary);
+}
+
+/* legenda */
+.profile-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-legend-item {
+    display: grid;
+    grid-template-columns: 1rem auto max-content;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+}
+
+.legend-dot-perf {
+    background-color: var(--classification-perfektivne);
+}
+.legend-dot-adapt {
+    background-color: var(--classification-adaptivne);
+}
+.legend-dot-kor {
+    background-color: var(--classification-korektivne);
+}
+.legend-dot-admin {
+    background-color: var(--classification-admin);
+}
+
+.legend-percent {
+    justify-self: end;
+}
+
+/* technologie */
+.profile-tech {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.profile-card-title {
+    margin: 0;
+}
+
+.profile-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+/* statistiky repozitarov */
+.profile-repos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.profile-repos-content {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.2fr) minmax(340px, 1.8fr);
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+
+.profile-repos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+/* riadok s repom */
+.profile-repo-row {
+    display: grid;
+    grid-template-columns: minmax(200px, 1.1fr) minmax(260px, 1.9fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.profile-repos-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ulozit tlacidlo dole */
+.profile-save {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.profile-save-btn {
+    padding-inline: 3.5rem;
+}
+
+
+
+/* responsivita */
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-donut-card {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-repos-content {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-repo-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile {
+        padding: 2rem 1rem;
+    }
+
+    .profile-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 1rem;
+    }
+}
+
+/* kontaktovania karta pre firmu */
+.profile-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-contact-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-height: 80px;
+}
+
+.profile-contact-empty {
+    color: var(--text-secondary);
+}
+
+/* tlacidlo kontaktovat zarovnane vpravo, ako na obrazku */
+.profile-contact-btn {
+    padding-inline: 2.5rem;
+}
+
+/* pri uzkych displejoch dame text nad tlacidlo */
+@media (max-width: 768px) {
+    .profile-contact-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-contact-btn {
+        align-self: flex-end;
+    }
+}
+

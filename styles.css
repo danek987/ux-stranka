@@ -1,376 +1,376 @@
-/*
-   Dizajnovy jazyk – CSS premenne
-*/
-:root {
-    /* Typografia */
-    --font-family-primary: "Inter", sans-serif;
-    --font-family-mono: "JetBrains Mono", monospace;
+/*!**/
+/*   Dizajnovy jazyk – CSS premenne*/
+/**!*/
+/*:root {*/
+/*    !* Typografia *!*/
+/*    --font-family-primary: "Inter", sans-serif;*/
+/*    --font-family-mono: "JetBrains Mono", monospace;*/
 
-    --font-display-48: 3rem;          /* 48px */
-    --font-h1-32: 2rem;               /* 32px */
-    --font-h2-24: 1.5rem;             /* 24px */
-    --font-h3-20: 1.25rem;            /* 20px */
-    --font-body-large-18: 1.125rem;   /* 18px */
-    --font-body-medium-16: 1rem;      /* 16px */
-    --font-body-small-14: 0.875rem;   /* 14px */
-    --font-label-12: 0.75rem;         /* 12px */
-    --font-chart-8: 0.5rem;           /* 8px */
-    --font-chart-10: 0.625rem;        /* 10px */
-    --font-jetBrains-16: 1rem;        /* 16px */
-    --font-jetBrains-12: 0.75rem;     /* 12px */
+/*    --font-display-48: 3rem;          !* 48px *!*/
+/*    --font-h1-32: 2rem;               !* 32px *!*/
+/*    --font-h2-24: 1.5rem;             !* 24px *!*/
+/*    --font-h3-20: 1.25rem;            !* 20px *!*/
+/*    --font-body-large-18: 1.125rem;   !* 18px *!*/
+/*    --font-body-medium-16: 1rem;      !* 16px *!*/
+/*    --font-body-small-14: 0.875rem;   !* 14px *!*/
+/*    --font-label-12: 0.75rem;         !* 12px *!*/
+/*    --font-chart-8: 0.5rem;           !* 8px *!*/
+/*    --font-chart-10: 0.625rem;        !* 10px *!*/
+/*    --font-jetBrains-16: 1rem;        !* 16px *!*/
+/*    --font-jetBrains-12: 0.75rem;     !* 12px *!*/
 
-    --weight-bold: 700;
-    --weight-semibold: 600;
-    --weight-medium: 500;
-    --weight-regular: 400;
+/*    --weight-bold: 700;*/
+/*    --weight-semibold: 600;*/
+/*    --weight-medium: 500;*/
+/*    --weight-regular: 400;*/
 
-    /* Farby */
-    --color-primary: #516687;
-    --color-secondary: #ADD9ED;
-    --color-background: #F6F8FB;
+/*    !* Farby *!*/
+/*    --color-primary: #516687;*/
+/*    --color-secondary: #ADD9ED;*/
+/*    --color-background: #F6F8FB;*/
 
-    --color-card-bg: #ffffff;
-    --color-card-border: #E5E6E6;
-    --color-card-bg2: #F4F4F4;
+/*    --color-card-bg: #ffffff;*/
+/*    --color-card-border: #E5E6E6;*/
+/*    --color-card-bg2: #F4F4F4;*/
 
-    --text-primary: #111827;
-    --text-secondary: #6B7280;
-    --text-cards: #757575;
-    --text-cards2: #B3B3B3;
-    --text-whiteText: #F5F5F5;
+/*    --text-primary: #111827;*/
+/*    --text-secondary: #6B7280;*/
+/*    --text-cards: #757575;*/
+/*    --text-cards2: #B3B3B3;*/
+/*    --text-whiteText: #F5F5F5;*/
 
-    --color-black-100: #1E1E1E;
-    --color-gray-100: #B3B3B3;
-    --color-gray-200: #5A5A5A;
-    --color-gray-300: #444444;
-    --color-gray-400: #222121;
-    --color-white-100: #ffffff;
-    --color-white-200: #f4f4f4;
-    --color-white-300: #EAEAEA;
+/*    --color-black-100: #1E1E1E;*/
+/*    --color-gray-100: #B3B3B3;*/
+/*    --color-gray-200: #5A5A5A;*/
+/*    --color-gray-300: #444444;*/
+/*    --color-gray-400: #222121;*/
+/*    --color-white-100: #ffffff;*/
+/*    --color-white-200: #f4f4f4;*/
+/*    --color-white-300: #EAEAEA;*/
 
-    --color-blue-input: #F1F5F9;
-    --color-gray-input: #ECECF0;
+/*    --color-blue-input: #F1F5F9;*/
+/*    --color-gray-input: #ECECF0;*/
 
-    --classification-adaptivne: #9094EC;
-    --classification-perfektivne: #7AEE93;
-    --classification-korektivne: #DD9494;
-    --classification-admin: #9CA3AF;
-    --color-green: #22C55E;
-    --color-orange: #F59E0B;
-    --color-red: #EF4444;
+/*    --classification-adaptivne: #9094EC;*/
+/*    --classification-perfektivne: #7AEE93;*/
+/*    --classification-korektivne: #DD9494;*/
+/*    --classification-admin: #9CA3AF;*/
+/*    --color-green: #22C55E;*/
+/*    --color-orange: #F59E0B;*/
+/*    --color-red: #EF4444;*/
 
-    --color-platny: #09FF00;       /* Platny token  #2ea45f*/
-    --color-neplatny: #FF0000;     /* Neplatny token #c05959 */
+/*    --color-platny: #09FF00;       !* Platny token  #2ea45f*!*/
+/*    --color-neplatny: #FF0000;     !* Neplatny token #c05959 *!*/
 
-    --lh-auto: normal;
-    --lh-tight: 110%;
-    --lh-normal: 140%;
-    --lh-relaxed: 150%;
+/*    --lh-auto: normal;*/
+/*    --lh-tight: 110%;*/
+/*    --lh-normal: 140%;*/
+/*    --lh-relaxed: 150%;*/
 
-    /* Layout */
-    --radius-card-border: 2.25rem;
-    --card-padding: 1.88rem;
-    --radius-button-border: 0.5rem;
-    --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
+/*    !* Layout *!*/
+/*    --radius-card-border: 2.25rem;*/
+/*    --card-padding: 1.88rem;*/
+/*    --radius-button-border: 0.5rem;*/
+/*    --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);*/
 
-    --spacing-page: 1.56rem;
-}
+/*    --spacing-page: 1.56rem;*/
+/*}*/
 
-/* fonty podla figmy*/
-/* Display-48 */
-.display-48 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-display-48);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* fonty podla figmy*!*/
+/*!* Display-48 *!*/
+/*.display-48 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-display-48);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* H1-32 */
-.h1-32 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-h1-32);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* H1-32 *!*/
+/*.h1-32 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-h1-32);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* H2-24 */
-.h2-24 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-h2-24);
-    font-weight: var(--weight-semibold);
-    line-height: var(--lh-auto);
-}
+/*!* H2-24 *!*/
+/*.h2-24 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-h2-24);*/
+/*    font-weight: var(--weight-semibold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* H3-20 */
-.h3-20 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-h3-20);
-    font-weight: var(--weight-semibold);
-    line-height: var(--lh-auto);
-}
+/*!* H3-20 *!*/
+/*.h3-20 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-h3-20);*/
+/*    font-weight: var(--weight-semibold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* BodyLarge-18 */
-.body-large-18 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-large-18);
-    font-weight: var(--weight-regular);
-    line-height: var(--lh-auto);
-}
+/*!* BodyLarge-18 *!*/
+/*.body-large-18 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-large-18);*/
+/*    font-weight: var(--weight-regular);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* BodyMedium-16 Auto */
-.body-medium-16-auto {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-medium-16);
-    font-weight: var(--weight-regular);
-    line-height: var(--lh-auto);
-}
+/*!* BodyMedium-16 Auto *!*/
+/*.body-medium-16-auto {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    font-weight: var(--weight-regular);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* BodyMedium-16 (16/24) */
-.body-medium-16 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-medium-16);
-    font-weight: var(--weight-regular);
-    line-height: 1.5rem;
-}
+/*!* BodyMedium-16 (16/24) *!*/
+/*.body-medium-16 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    font-weight: var(--weight-regular);*/
+/*    line-height: 1.5rem;*/
+/*}*/
 
-/* BodyMedium-16 Bold */
-.body-medium-16-bold {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-medium-16);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* BodyMedium-16 Bold *!*/
+/*.body-medium-16-bold {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* BodySmall-14 */
-.body-small-14 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-small-14);
-    font-weight: var(--weight-regular);
-    line-height: var(--lh-auto);
-}
+/*!* BodySmall-14 *!*/
+/*.body-small-14 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-small-14);*/
+/*    font-weight: var(--weight-regular);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* Label-12 */
-.label-12 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-label-12);
-    font-weight: var(--weight-medium);
-    line-height: var(--lh-auto);
-}
+/*!* Label-12 *!*/
+/*.label-12 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-label-12);*/
+/*    font-weight: var(--weight-medium);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* Chart-8 */
-.chart-8 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-chart-8);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* Chart-8 *!*/
+/*.chart-8 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-chart-8);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* Chart-10 */
-.chart-10 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-chart-10);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* Chart-10 *!*/
+/*.chart-10 {*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-chart-10);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/* JetBrains Mono styles */
-.mono-16 {
-    font-family: var(--font-family-mono);
-    font-size: var(--font-jetBrains-16);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*!* JetBrains Mono styles *!*/
+/*.mono-16 {*/
+/*    font-family: var(--font-family-mono);*/
+/*    font-size: var(--font-jetBrains-16);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-.mono-12 {
-    font-family: var(--font-family-mono);
-    font-size: var(--font-jetBrains-12);
-    font-weight: var(--weight-bold);
-    line-height: var(--lh-auto);
-}
+/*.mono-12 {*/
+/*    font-family: var(--font-family-mono);*/
+/*    font-size: var(--font-jetBrains-12);*/
+/*    font-weight: var(--weight-bold);*/
+/*    line-height: var(--lh-auto);*/
+/*}*/
 
-/*-----------------------------*/
-/*
-   Zakladne styly
- */
+/*!*-----------------------------*!*/
+/*!**/
+/*   Zakladne styly*/
+/* *!*/
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+/**,*/
+/**::before,*/
+/**::after {*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-body {
-    margin: 0;
-    font-family: var(--font-family-primary);
-    font-size: var(--font-body-medium-16);
-    color: var(--text-primary);
-    background-color: var(--color-background);
-}
+/*body {*/
+/*    margin: 0;*/
+/*    font-family: var(--font-family-primary);*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    color: var(--text-primary);*/
+/*    background-color: var(--color-background);*/
+/*}*/
 
-/*-----------------------------*/
-/*
-   Horny panel (header)
-*/
+/*!*-----------------------------*!*/
+/*!**/
+/*   Horny panel (header)*/
+/**!*/
 
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 8px var(--spacing-page);
-    background-color: var(--color-primary);
-    color: var(--text-primary);
-}
+/*.topbar {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    gap: 16px;*/
+/*    padding: 8px var(--spacing-page);*/
+/*    background-color: var(--color-primary);*/
+/*    color: var(--text-primary);*/
+/*}*/
 
-/* Lava a prava cast headera */
-.topbar-left,
-.topbar-right {
-    display: flex;
-    align-items: center;
-}
+/*!* Lava a prava cast headera *!*/
+/*.topbar-left,*/
+/*.topbar-right {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
-/* Tlacidlo MENU */
-.menu-button {
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    font-size: var(--font-body-medium-16);
-    cursor: pointer;
-}
+/*!* Tlacidlo MENU *!*/
+/*.menu-button {*/
+/*    background: transparent;*/
+/*    border: none;*/
+/*    color: var(--text-primary);*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    cursor: pointer;*/
+/*}*/
 
-/* Navigacne linky v strede */
-.topbar-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    flex: 1;
-}
+/*!* Navigacne linky v strede *!*/
+/*.topbar-nav {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 32px;*/
+/*    flex: 1;*/
+/*}*/
 
-.nav-link {
-    font-size: var(--font-body-medium-16);
-    text-decoration: none;
-    opacity: 0.9;
-}
+/*.nav-link {*/
+/*    font-size: var(--font-body-medium-16);*/
+/*    text-decoration: none;*/
+/*    opacity: 0.9;*/
+/*}*/
 
-.nav-link.is-active {
-    font-weight: 600;
-}
+/*.nav-link.is-active {*/
+/*    font-weight: 600;*/
+/*}*/
 
-/*-----------------------------*/
-/*
-   Tlacidla
-*/
-
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border-radius: var(--radius-button-border);
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--text-whiteText);
-}
-
-.btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--text-primary);
-}
-
-/* Viditelny focus pre pristupnost */
-.btn:focus,
-.menu-button:focus,
-.nav-link:focus {
-    outline: 2px solid #1d9bf0;
-    outline-offset: 2px;
-}
-
-/*-----------------------------*/
-/*
-   Hlavna stranka - rozlozenie
-*/
-
-.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 var(--spacing-page);
-}
-
-/* Karta v strede */
-.home-card {
-    background-color: var(--color-card-bg);
-    border-radius: var(--radius-card-border);
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--color-card-border);
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-    padding: var(--card-padding);
-}
-
-.home h1 {
-    margin-top: var(--spacing-page);
-    margin-bottom: var(--spacing-page);
-}
-
-/* Vertikalne menu tlacidiel */
-.home-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+/*!*-----------------------------*!*/
+/*!**/
+/*   Tlacidla*/
+/**!*/
 
 
-/*
-   Responzivita - media queries
- */
+/*.btn {*/
+/*    display: inline-flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding: 10px 16px;*/
+/*    border-radius: var(--radius-button-border);*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
 
-/* Tablet */
-@media (max-width: 900px) {
-    .topbar-nav {
-        gap: 1rem;
-    }
+/*.btn-primary {*/
+/*    background-color: var(--color-primary);*/
+/*    color: var(--text-whiteText);*/
+/*}*/
 
-    .home-card {
-        padding: 2rem 1.5rem;
-    }
-}
+/*.btn-secondary {*/
+/*    background-color: var(--color-secondary);*/
+/*    color: var(--text-primary);*/
+/*}*/
 
-/* Mobil */
-@media (max-width: 600px) {
-    .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/*!* Viditelny focus pre pristupnost *!*/
+/*.btn:focus,*/
+/*.menu-button:focus,*/
+/*.nav-link:focus {*/
+/*    outline: 2px solid #1d9bf0;*/
+/*    outline-offset: 2px;*/
+/*}*/
 
-    .topbar-nav {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 0.5rem 1rem;
-    }
+/*!*-----------------------------*!*/
+/*!**/
+/*   Hlavna stranka - rozlozenie*/
+/**!*/
 
-    .home {
-        padding: 2rem 1rem;
-    }
+/*.home {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding: 0 var(--spacing-page);*/
+/*}*/
 
-    .home-card {
-        padding: var(--card-padding);
-        border-radius: 1rem;
-    }
+/*!* Karta v strede *!*/
+/*.home-card {*/
+/*    background-color: var(--color-card-bg);*/
+/*    border-radius: var(--radius-card-border);*/
+/*    box-shadow: var(--shadow-card);*/
+/*    border: 1px solid var(--color-card-border);*/
+/*    max-width: 700px;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    padding: var(--card-padding);*/
+/*}*/
 
-    .home h1 {
-        font-size: var(--font-h1-32);
-    }
+/*.home h1 {*/
+/*    margin-top: var(--spacing-page);*/
+/*    margin-bottom: var(--spacing-page);*/
+/*}*/
 
-    .nav-link {
-        font-size: var(--font-body-small-14);
-    }
-}
+/*!* Vertikalne menu tlacidiel *!*/
+/*.home-actions {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 1rem;*/
+/*}*/
+
+
+/*!**/
+/*   Responzivita - media queries*/
+/* *!*/
+
+/*!* Tablet *!*/
+/*@media (max-width: 900px) {*/
+/*    .topbar-nav {*/
+/*        gap: 1rem;*/
+/*    }*/
+
+/*    .home-card {*/
+/*        padding: 2rem 1.5rem;*/
+/*    }*/
+/*}*/
+
+/*!* Mobil *!*/
+/*@media (max-width: 600px) {*/
+/*    .topbar {*/
+/*        flex-direction: column;*/
+/*        align-items: flex-start;*/
+/*    }*/
+
+/*    .topbar-nav {*/
+/*        flex-wrap: wrap;*/
+/*        justify-content: flex-start;*/
+/*        gap: 0.5rem 1rem;*/
+/*    }*/
+
+/*    .home {*/
+/*        padding: 2rem 1rem;*/
+/*    }*/
+
+/*    .home-card {*/
+/*        padding: var(--card-padding);*/
+/*        border-radius: 1rem;*/
+/*    }*/
+
+/*    .home h1 {*/
+/*        font-size: var(--font-h1-32);*/
+/*    }*/
+
+/*    .nav-link {*/
+/*        font-size: var(--font-body-small-14);*/
+/*    }*/
+/*}*/

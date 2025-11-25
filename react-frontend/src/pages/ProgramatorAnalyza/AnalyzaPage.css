@@ -1,0 +1,102 @@
+/* hlavny layout stranky Analyza */
+.analyza-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2.5rem;
+    background-color: var(--color-background);
+}
+
+/* nadpis Analyza */
+.analyza-title {
+    text-align: center;
+}
+
+/* karta so sluzbami */
+.analyza-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+    padding: 1.875rem;
+    max-width: 750px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+
+/* zoznam providerov */
+.providers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+/* jeden riadok – GitHub / GitLab */
+.provider-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* lava cast riadku – nazov + ikona */
+.provider-main {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.provider-name {
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+}
+
+/* ikony providerov – */
+.provider-icon {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.provider-icon-github {
+    background-image: url("https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png");
+}
+
+.provider-icon-gitlab {
+    background-image: url("https://about.gitlab.com/images/press/logo/svg/gitlab-icon-rgb.svg");
+}
+
+.token-info {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+
+/* tlacidlo Nastavit Token cez celu sirku karty */
+.analyza-token-button {
+    width: 100%;
+}
+
+/* responzivne spravanie pre mensie displeje */
+@media (max-width: 768px) {
+    .analyza-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .provider-row {
+
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .token-badge {
+        align-self: flex-end;
+    }
+}

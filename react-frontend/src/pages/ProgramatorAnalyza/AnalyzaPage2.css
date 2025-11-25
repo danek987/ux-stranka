@@ -1,0 +1,150 @@
+.analyza2-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5rem;
+    background-color: var(--color-background);
+    align-items: center;
+}
+
+/* nadpis hore */
+.analyza2-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* hlavny layout dvoch panelov */
+.analyza2-layout {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+
+    /* aby panely vedeli spadnut pod seba */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* lavy panel s poskytovatelmi */
+.analyza2-left {
+    min-width: 250px;
+    max-width: 367px;
+    width: 100%;
+
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+
+    padding: 1.875rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+.analyza2-provider-block {
+    background-color: white;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-card-border);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+/* pravy panel s obsahom */
+.analyza2-right {
+    flex: 1 1 480px;
+    min-width: 150px;
+    max-width: 910px;
+
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+
+    padding: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.analyza2-right-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.analyza2-right-content p {
+    color: var(--text-secondary);
+}
+
+/* provider spolocne veci */
+.provider-main {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.provider-name {
+    font-weight: var(--weight-semibold);
+}
+
+.provider-icon {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.badge{
+    width: 100%;
+}
+
+.provider-icon-github {
+    background-image: url("https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png");
+}
+
+.provider-icon-gitlab {
+    background-image: url("https://about.gitlab.com/images/press/logo/svg/gitlab-icon-rgb.svg");
+}
+
+/* jeden riadok poskytovatela */
+.provider-row2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1.25rem;
+}
+
+
+
+/* vertikalny blok pre GitHub / GitLab */
+.provider-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* riadok nazov + ikona hore nad badge */
+.provider-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.provider-block .validity-badge {
+    width: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,95 @@
+/* hlavne rozlozenie stranky kontaktovat */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.contact-form h1 {
+    margin-top: var(--spacing-page);
+    margin-bottom: var(--spacing-page);
+}
+
+/* karta s formularom */
+.contact-form-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-card-border);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-card-border);
+    max-width: 720px;
+    width: 100%;
+    padding: var(--card-padding);
+}
+
+/* ID programatora hore v karte */
+.contact-form-id {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-form-id-value {
+    font-weight: 700;
+}
+
+/* vnutro formulara */
+.contact-form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* riadok pre datum + ikonku kalendara */
+.contact-form-row {
+    position: relative;
+}
+
+.contact-form-calendar-icon {
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(10%);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+/* select pre typ kontaktu */
+.contact-form-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.contact-form-select {
+    height: 42px;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-card-border);
+    padding: 0 0.75rem;
+    background-color: var(--color-card-bg, #fff);
+    font: inherit;
+}
+
+/* tlacidlo odoslat */
+.contact-form-submit {
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .contact-form-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* mobil */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form-card {
+        padding: var(--card-padding);
+        border-radius: 1rem;
+    }
+}

@@ -241,5 +241,6 @@ body {
   padding: 1rem var(--spacing-page);
   border-top: 1px solid var(--color-card-border);
   text-align: center;
+  margin-top: 2rem;
   background-color: var(--color-card-bg);
 }
