@@ -3,20 +3,34 @@ import "./VyhladatPage.css";
 
 import Button from "../../components/Button/Button";
 import TextInput from "../../components/Input/TextInput";
+import { useNavigate } from "react-router-dom";
 
 const VyhladatPage = () => {
     const [programmerId, setProgrammerId] = useState("");
+    const [error, setError] = useState("");
 
-    // odoslanie formulara
+    const navigate = useNavigate();
+
+    // autofill po kliknutí do inputu
+    const handleInputFocus = () => {
+        setError("");
+        if (!programmerId) {
+            setProgrammerId("Y8584668");
+        }
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (!programmerId.trim()) {
+            setError("Treba vyplniť ID programátora.");
             return;
         }
 
-        // sem pride realne vyhladavanie podla ID
-        console.log("Vyhladat programatora s ID:", programmerId);
+        setError("");
+
+        // PRESMEROVANIE NA KONTAKTOVANIE
+        navigate(`/firma/profil/${programmerId.trim()}`);
     };
 
     return (
@@ -34,7 +48,12 @@ const VyhladatPage = () => {
                         placeholder="Y8584668"
                         value={programmerId}
                         onChange={(e) => setProgrammerId(e.target.value)}
+                        onFocus={handleInputFocus}
                     />
+
+                    {error && (
+                        <p className="error body-small-14">{error}</p>
+                    )}
 
                     <Button
                         type="submit"

@@ -244,3 +244,9 @@ body {
   margin-top: 2rem;
   background-color: var(--color-card-bg);
 }
+
+.error {
+  margin-top: 0.5rem;
+  color: var(--color-red);
+  text-align: center;
+}

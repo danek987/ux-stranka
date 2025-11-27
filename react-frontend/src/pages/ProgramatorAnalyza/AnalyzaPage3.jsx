@@ -4,67 +4,55 @@ import "./AnalyzaPage2.css";
 import Button from "../../components/Button/Button";
 import ValidityBadge from "../../components/GitComponents/ValidityBadge";
 import RepoCardAnalyze from "../../components/GitComponents/RepoCardAnalyze";
+import { useNavigate } from "react-router-dom";
 
-// pole s repozitarmi (konfiguracia)
 const repos = [
-    {
-        id: "zadanie-programovanie",
-        title: "Zadanie programovanie",
-        commits: 115
-    },
-    {
-        id: "todo-app",
-        title: "TO DO App",
-        commits: 35
-    },
-    {
-        id: "webstranka",
-        title: "WebStranka",
-        commits: 125,
-        language: "HTML"
-    },
-    {
-        id: "zadanie-usaa",
-        title: "Zadanie USAA",
-        commits: 268
-    },
-    {
-        id: "zadanie-programovanie2",
-        title: "Zadanie programovanie2",
-        commits: 10,
-        language: "Java"
-    },
-    {
-        id: "python-ucenie",
-        title: "Python učenie",
-        commits: 158
-    },
-    {
-        id: "react-app",
-        title: "React App",
-        commits: 78
-    }
+    { id: "zadanie-programovanie", title: "Zadanie programovanie", commits: 115 },
+    { id: "todo-app", title: "TO DO App", commits: 35 },
+    { id: "webstranka", title: "WebStranka", commits: 125, language: "HTML" },
+    { id: "zadanie-usaa", title: "Zadanie USAA", commits: 268 },
+    { id: "zadanie-programovanie2", title: "Zadanie programovanie2", commits: 10, language: "Java" },
+    { id: "python-ucenie", title: "Python učenie", commits: 158 },
+    { id: "react-app", title: "React App", commits: 78 }
 ];
 
 const AnalyzaPage3 = () => {
-    // stav vybratych repozitarov (id -> true/false)
-    const [selectedRepos, setSelectedRepos] = useState({});
+    const navigate = useNavigate();
 
-    // prepnutie vyberu konkretneho repozitara
+    const [selectedRepos, setSelectedRepos] = useState({});
+    const [showError, setShowError] = useState(false);
+
     const toggleRepo = (id) => {
-        setSelectedRepos((prev) => ({
-            ...prev,
-            [id]: !prev[id]
-        }));
+        setSelectedRepos((prev) => {
+            const next = { ...prev, [id]: !prev[id] };
+
+            // ak nieco oznacime, chybu mozeme skryt
+            if (Object.values(next).some(Boolean)) {
+                setShowError(false);
+            }
+
+            return next;
+        });
     };
 
-    // vypocet alokovanych commitov zo vsetkych vybratych repozitarov
     const allocatedCommits = repos.reduce((sum, repo) => {
         if (selectedRepos[repo.id]) {
             return sum + repo.commits;
         }
         return sum;
     }, 0);
+
+    const handleGoToAnalyzeLoad = () => {
+        const hasSelected = Object.values(selectedRepos).some(Boolean);
+
+        if (!hasSelected) {
+            setShowError(true);
+            return;
+        }
+
+        setShowError(false);
+        navigate("/analyzaload");
+    };
 
     return (
         <main className="analyza2-page">
@@ -73,7 +61,6 @@ const AnalyzaPage3 = () => {
             <div className="analyza2-layout">
                 {/* lavy panel */}
                 <section className="analyza2-left">
-                    {/* GitHub blok */}
                     <div className="provider-block">
                         <div className="provider-main">
                             <span className="provider-name h1-32">GitHub</span>
@@ -82,11 +69,9 @@ const AnalyzaPage3 = () => {
                                 aria-hidden="true"
                             />
                         </div>
-
                         <ValidityBadge className="badge" status="platny" />
                     </div>
 
-                    {/* GitLab blok */}
                     <div className="provider-block">
                         <div className="provider-main">
                             <span className="provider-name h1-32">GitLab</span>
@@ -95,19 +80,16 @@ const AnalyzaPage3 = () => {
                                 aria-hidden="true"
                             />
                         </div>
-
                         <ValidityBadge status="neplatny" />
                     </div>
 
-                    {/* spolocne tlacidlo dole */}
                     <Button variant="primary">
                         Načitať
                     </Button>
                 </section>
 
-                {/* pravy panel so zoznamom repozitarov */}
+                {/* pravy panel */}
                 <section className="analyza2-right analyza-loaded-right">
-                    {/* horna cast s nastaveniami */}
                     <div className="analyza-loaded-top">
                         <div className="analyza-loaded-commits body-medium-16-auto">
                             Počet alokovaných commitov: {allocatedCommits} / 350
@@ -141,7 +123,6 @@ const AnalyzaPage3 = () => {
                         </div>
                     </div>
 
-                    {/* stredna cast s textom a tlacidlom Spustit */}
                     <div className="analyza-loaded-center">
                         <p className="body-medium-16-auto analyza-loaded-hint">
                             Je potrebné označiť repozitáre k analýze
@@ -149,17 +130,25 @@ const AnalyzaPage3 = () => {
                             kliknutím na karty repozitárov
                         </p>
 
-                        <Button size="large" variant="primary">
+                        <Button
+                            size="large"
+                            variant="primary"
+                            onClick={handleGoToAnalyzeLoad}
+                        >
                             Spustiť
                         </Button>
+
+                        {showError && (
+                            <p className="error body-small-14">
+                                Je potrebné označiť aspoň jeden repozitár.
+                            </p>
+                        )}
                     </div>
 
-                    {/* riadok so sortovanim */}
                     <div className="analyza-loaded-sort body-medium-16-auto">
                         Zoradiť podľa počtu commitov ↑
                     </div>
 
-                    {/* zoznam repozitarov cez komponent RepoCardAnalyze */}
                     <div className="analyza-loaded-repos">
                         {repos.map((repo) => (
                             <RepoCardAnalyze

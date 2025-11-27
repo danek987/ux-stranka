@@ -4,20 +4,20 @@ import "./TokenyPage.css";
 import Button from "../../components/Button/Button";
 import TextInput from "../../components/Input/TextInput";
 import ValidityBadge from "../../components/GitComponents/ValidityBadge";
+import { useNavigate } from "react-router-dom";
 
 const TokenyPage = () => {
-    // stav pre manualne zadavanie tokenu
     const [manualToken, setManualToken] = useState("");
     const [manualName, setManualName] = useState("");
     const [provider, setProvider] = useState("github");
 
-    // stav platnosti tokenov
     const [isGithubValid, setIsGithubValid] = useState(false);
     const [isGitlabValid, setIsGitlabValid] = useState(false);
 
+    const [error, setError] = useState("");
+
     const hasAnyValid = isGithubValid || isGitlabValid;
 
-    // simulacia oauth prihlasenia
     const handleOAuth = (targetProvider) => {
         if (targetProvider === "github") {
             setIsGithubValid(true);
@@ -26,7 +26,6 @@ const TokenyPage = () => {
         }
     };
 
-    // odpojenie tokenu
     const handleDisconnect = (targetProvider) => {
         if (targetProvider === "github") {
             setIsGithubValid(false);
@@ -35,28 +34,47 @@ const TokenyPage = () => {
         }
     };
 
-    // manualne pridanie tokenu
+    // autofill pri kliknuti do inputu – len ak je prazdny
+    const handleTokenFocus = () => {
+        setError("");
+        if (!manualToken) {
+            setManualToken("ghu_62565ewfwe61f54158415ews5f");
+        }
+    };
+
+    const handleNameFocus = () => {
+        setError("");
+        if (!manualName) {
+            setManualName("GitMeno123");
+        }
+    };
+
     const handleAddToken = (event) => {
         event.preventDefault();
 
-        if (!manualToken.trim()) {
+        if (!manualToken.trim() || !manualName.trim()) {
+            setError("Treba vyplnit potrebne udaje.");
             return;
         }
 
+        setError("");
+
+        // nastavime prislusneho providera ako platneho
         if (provider === "github") {
             setIsGithubValid(true);
         } else {
             setIsGitlabValid(true);
         }
 
+        // vycistenie inputov po pridani
         setManualToken("");
         setManualName("");
     };
 
-    // buduca navigacia na analyzu
+    const navigate = useNavigate();
+
     const handleGoToAnalyze = () => {
-        // sem mozes doplnit realnu navigaciu (napr. react-router)
-        console.log("Prejst k analyze");
+        navigate("/analyza2");
     };
 
     return (
@@ -146,6 +164,7 @@ const TokenyPage = () => {
                         placeholder="Token ghu_xxxxxxxx"
                         value={manualToken}
                         onChange={(e) => setManualToken(e.target.value)}
+                        onFocus={handleTokenFocus}
                     />
 
                     <TextInput
@@ -153,33 +172,48 @@ const TokenyPage = () => {
                         placeholder="Meno na git"
                         value={manualName}
                         onChange={(e) => setManualName(e.target.value)}
+                        onFocus={handleNameFocus}
                     />
 
                     <div className="tokens-provider-options">
-                        <span className="body-small-14">Platforma</span>
-
-                        <label className="tokens-radio body-medium-16-auto">
-                            <input
-                                type="radio"
-                                name="provider"
-                                value="github"
-                                checked={provider === "github"}
-                                onChange={() => setProvider("github")}
-                            />
-                            <span>GitHub</span>
+                        <label className="field-label body-medium-16-bold">
+                            Platforma
                         </label>
 
-                        <label className="tokens-radio body-medium-16-auto">
-                            <input
-                                type="radio"
-                                name="provider"
-                                value="gitlab"
-                                checked={provider === "gitlab"}
-                                onChange={() => setProvider("gitlab")}
-                            />
-                            <span>GitLab</span>
-                        </label>
+                        <div className="tokens-radio-row">
+                            <label className="tokens-radio body-medium-16-auto">
+                                <input
+                                    type="radio"
+                                    name="provider"
+                                    value="github"
+                                    checked={provider === "github"}
+                                    onChange={() => {
+                                        setProvider("github");
+                                        setError("");
+                                    }}
+                                />
+                                <span>GitHub</span>
+                            </label>
+
+                            <label className="tokens-radio body-medium-16-auto">
+                                <input
+                                    type="radio"
+                                    name="provider"
+                                    value="gitlab"
+                                    checked={provider === "gitlab"}
+                                    onChange={() => {
+                                        setProvider("gitlab");
+                                        setError("");
+                                    }}
+                                />
+                                <span>GitLab</span>
+                            </label>
+                        </div>
                     </div>
+
+                    {error && (
+                        <p className="error body-small-14">{error}</p>
+                    )}
 
                     <Button
                         type="submit"

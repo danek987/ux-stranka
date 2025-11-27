@@ -233,31 +233,12 @@
     flex-direction: column;
     gap: 2.1875rem;
     align-items: center;
+    max-width: 25rem;
+    width: 100%;
 }
 
 .analyza-loaded-repos > * {
     width: 100%;
-    max-width: 450px; /* nova max sirka card */
-}
-
-
-/* ak RepoCardAnalyze pouziva vlastne triedy, tieto mozes odstranit
-   nechavam len pre pripad, ze by si chcel fallback styl */
-.repo-card {
-    background-color: #f5f5f7;
-    border-radius: 999px;
-    padding: 0.9rem 1.4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-
-.repo-card-title {
-    font-weight: var(--weight-semibold);
-}
-
-.repo-card-meta {
-    color: var(--text-secondary);
 }
 
 /* mobilne spravanie praveho panelu */

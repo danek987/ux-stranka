@@ -2,8 +2,13 @@ import React from "react";
 import "./AnalyzaPage.css";
 import Button from "../../components/Button/Button";
 import ValidityBadge from "../../components/GitComponents/ValidityBadge";
+import {useNavigate} from "react-router-dom";
 
 const AnalyzaPage = () => {
+    const navigate = useNavigate();
+    const handleGoToTokens = () => {
+        navigate("/tokeny");
+    };
     return (
         <main className="analyza-page">
             <h1 className="analyza-title display-48">
@@ -54,6 +59,8 @@ const AnalyzaPage = () => {
                     variant="primary"
                     size="large"
                     className="analyza-token-button"
+                    onClick={handleGoToTokens}
+
                 >
                     Prejsť k nastaveniu Tokenu
                 </Button>

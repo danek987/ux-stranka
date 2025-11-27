@@ -5,8 +5,14 @@ import LanguageTag from "../../components/GitComponents/LanguageTag";
 import RepoCard from "../../components/GitComponents/RepoCard";
 import CommitList from "../../components/GitComponents/CommitList";
 import InfoCard from "../../components/GitComponents/InfoCard";
+import Button from "../../components/Button/Button";
+import {useNavigate} from "react-router-dom";
 
 const ProfilPage = () => {
+    const navigate = useNavigate();
+    const handleGoToMenu = () => {
+        navigate("/");
+    };
     const totalCommits = 275;
 
     const repos = [
@@ -166,9 +172,9 @@ const ProfilPage = () => {
             </section>
 
             <div className="profile-save">
-                <button className="btn btn-primary profile-save-btn">
+                <Button className="btn btn-primary" onClick={handleGoToMenu}>
                     Uložiť
-                </button>
+                </Button>
             </div>
         </main>
     );

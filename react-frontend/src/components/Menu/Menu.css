@@ -1,72 +1,88 @@
-/* horny panel (header) */
-
+/* ===== HORNÝ PANEL ===== */
 .topbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 8px var(--spacing-page);
+    height: 3.75rem; /* 60px */
+    padding: 0 var(--spacing-page);
     background-color: var(--color-primary);
-    color: var(--text-primary);
+    color: var(--text-whiteText);
+    gap: 1rem; /* 16px */
 }
 
-/* lava a prava cast headera */
-.topbar-left,
-.topbar-right {
-    display: flex;
-    align-items: center;
-}
-
-/* tlacidlo MENU */
-.menu-button {
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    font-size: var(--font-body-medium-16);
-    cursor: pointer;
-}
-
-/* navigacne linky v strede */
-.topbar-nav {
+/* ===== IKONA MENU ===== */
+.menu-icon-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--color-black-100);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    flex: 1;
+    border: none;
+    cursor: pointer;
 }
 
+.menu-icon {
+    font-size: 1.125rem;
+    color: var(--color-white-100);
+}
+
+/* ===== NAVIGÁCIA ===== */
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 16px */
+    flex: 1;
+    justify-content: center;
+}
+
+/* základ tlačidiel */
 .nav-link {
     font-size: var(--font-body-medium-16);
+    padding: 0.625rem 0.625rem; /* 10px */
+    border-radius: 0.625rem;   /* 10px */
+    color: var(--color-white-100);
     text-decoration: none;
-    opacity: 0.9;
-    color: inherit;
+    transition: 0.15s ease;
 }
 
+/* hover */
+.nav-link:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ACTIVE stav */
 .nav-link.is-active {
-    font-weight: 600;
+    background-color: var(--color-secondary);
+    color: var(--text-primary);
+    font-weight: var(--weight-semibold);
 }
 
-/* tablet */
-@media (max-width: 900px) {
-    .topbar-nav {
-        gap: 1rem;
-    }
+/* ===== ODHLÁSIT TLACIDLO ===== */
+.logout-btn {
+    padding: 0.625rem 1rem; /* 10px + horizontal extra */
+    border-radius: 0.625rem; /* 10px */
+    background-color: var(--color-secondary);
+    border: none;
+    font-size: var(--font-body-medium-16);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-weight: var(--weight-medium);
 }
 
-/* mobil */
+/* responzivita */
 @media (max-width: 600px) {
     .topbar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 
     .topbar-nav {
+        flex-basis: 100%;
+        justify-content: center;
         flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 0.5rem 1rem;
-    }
-
-    .nav-link {
-        font-size: var(--font-body-small-14);
     }
 }

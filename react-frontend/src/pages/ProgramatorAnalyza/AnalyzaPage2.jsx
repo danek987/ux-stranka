@@ -2,8 +2,14 @@ import React from "react";
 import "./AnalyzaPage2.css";
 import Button from "../../components/Button/Button";
 import ValidityBadge from "../../components/GitComponents/ValidityBadge";
+import {useNavigate} from "react-router-dom";
 
 const AnalyzaPage2 = () => {
+    const navigate = useNavigate();
+    const handleGoToAnalyze = () => {
+        navigate("/analyza3");
+    };
+
     return (
         <main className="analyza2-page">
             <h1 className="analyza2-title display-48">Generovanie profilu</h1>
@@ -40,6 +46,7 @@ const AnalyzaPage2 = () => {
                     {/* spolocne tlacidlo dole */}
                     <Button
                         variant="primary"
+                        onClick = {handleGoToAnalyze}
                     >
                         Načitať
                     </Button>
@@ -53,7 +60,7 @@ const AnalyzaPage2 = () => {
                             Načítajte repozitáre z gitu
                         </p>
 
-                        <Button size="large" variant="primary">
+                        <Button size="large" variant="primary" onClick = {handleGoToAnalyze}>
                             Načítať
                         </Button>
                     </div>

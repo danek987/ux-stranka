@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AnalyzaPageLoading.css";
+import { useNavigate } from "react-router-dom";
 
 const AnalyzaPageLoading = () => {
+    const navigate = useNavigate();
+
     // hodnoty pre spracovane commity
     const processedCommits = 20;
     const totalCommits = 158;
@@ -11,6 +14,15 @@ const AnalyzaPageLoading = () => {
         100,
         Math.round((processedCommits / totalCommits) * 100)
     );
+
+    // presmerovanie 2 sekundach
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/profil");
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, [navigate]);
 
     return (
         <main className="analyza-loading-page">

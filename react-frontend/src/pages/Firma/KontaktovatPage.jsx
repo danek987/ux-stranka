@@ -4,8 +4,8 @@ import "./KontaktovatPage.css";
 import Button from "../../components/Button/Button";
 import TextInput from "../../components/Input/TextInput";
 import TextField from "../../components/Input/TextAreaField";
-import { useParams } from "react-router-dom";
 import SelectField from "../../components/Input/SelectField";
+import { useParams, useNavigate } from "react-router-dom";
 
 const KontaktovatPage = () => {
     // id programatora z url, napr. /kontaktovat/X47859
@@ -16,10 +16,43 @@ const KontaktovatPage = () => {
     const [datetime, setDatetime] = useState("");
     const [type, setType] = useState("online");
     const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
+
+    const navigate = useNavigate();
+
+    // autofill pri kliknuti do inputov (iba ak su prazdne / default)
+    const handlePlaceFocus = () => {
+        setError("");
+        if (!place) {
+            setPlace("Online");
+        }
+    };
+
+    const handleDatetimeFocus = () => {
+        setError("");
+        if (!datetime) {
+            // validny format pre datetime-local, len demo hodnota
+            setDatetime("2025-01-15T10:00");
+        }
+    };
+
+    const handleMessageFocus = () => {
+        setError("");
+        if (!message) {
+            setMessage("Radi by sme si s Vami dohodli stretnutie ohľadom možnej spolupráce.");
+        }
+    };
 
     // odoslanie formulara
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (!place.trim() || !datetime.trim() || !message.trim()) {
+            setError("Treba vyplniť potrebné údaje.");
+            return;
+        }
+
+        setError("");
 
         const payload = {
             programmerId: id,
@@ -31,6 +64,9 @@ const KontaktovatPage = () => {
 
         // sem pride realne volanie API
         console.log("Odoslat kontaktovanie:", payload);
+
+        // presmerovanie na zoznam kontaktovani firmy
+        navigate("/kontaktovaniaFirma");
     };
 
     return (
@@ -49,6 +85,7 @@ const KontaktovatPage = () => {
                         placeholder="Online"
                         value={place}
                         onChange={(e) => setPlace(e.target.value)}
+                        onFocus={handlePlaceFocus}
                     />
 
                     {/* datum a cas */}
@@ -59,8 +96,8 @@ const KontaktovatPage = () => {
                             type="datetime-local"
                             value={datetime}
                             onChange={(e) => setDatetime(e.target.value)}
+                            onFocus={handleDatetimeFocus}
                         />
-                        {/* ak mas ikonku kalendara ako samostatny komponent, da sa doplnit sem */}
                         <span className="contact-form-calendar-icon" aria-hidden="true">
                             📅
                         </span>
@@ -71,7 +108,10 @@ const KontaktovatPage = () => {
                         <SelectField
                             label="Typ kontaktu"
                             value={type}
-                            onChange={(e) => setType(e.target.value)}
+                            onChange={(e) => {
+                                setType(e.target.value);
+                                setError("");
+                            }}
                             options={[
                                 { value: "online", label: "Online" },
                                 { value: "osobne", label: "Osobne" },
@@ -86,7 +126,13 @@ const KontaktovatPage = () => {
                         placeholder="Správa"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        onFocus={handleMessageFocus}
                     />
+
+                    {/* jedna spolocna chyba */}
+                    {error && (
+                        <p className="error body-small-14">{error}</p>
+                    )}
 
                     <Button
                         type="submit"

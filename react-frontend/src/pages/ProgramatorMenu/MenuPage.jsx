@@ -18,7 +18,7 @@ const MenuPage = () => {
                         variant="primary"
                         size="large"
                         className="home-btn"
-                        onClick={() => navigate("/vyhladat")}
+                        onClick={() => navigate("/analyza1")}
                     >
                         Analyza
                     </Button>

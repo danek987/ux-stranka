@@ -80,8 +80,22 @@
 /* radio pre vyber platformy */
 .tokens-provider-options {
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.tokens-provider-options .field-label {
+    display: inline-block;
+    padding-bottom: 0;
+}
+
+.tokens-radio-row {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    width: 100%;
 }
 
 .tokens-radio {
