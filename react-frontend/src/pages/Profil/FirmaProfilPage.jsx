@@ -21,12 +21,12 @@ const FirmaProfilPage = () => {
     };
 
     return (
-        <main className="profile">
+        <main className="profile page">
             <h1 className="display-48">Štýlový profil</h1>
 
             <section className="profile-grid">
                 {/* lava horna karta – identita programatora */}
-                <div className="profile-card profile-summary">
+                <div className="profile-card card profile-summary">
                     <div className="profile-id h1-32">{programmerId}</div>
 
                     <div className="profile-github body-medium-16">
@@ -38,7 +38,7 @@ const FirmaProfilPage = () => {
                 </div>
 
                 {/* prava horna karta – donut + legenda */}
-                <div className="profile-card profile-donut-card">
+                <div className="profile-card card profile-donut-card">
                     <div className="profile-donut-wrapper">
                         <div className="profile-donut">
                             <div className="profile-donut-inner">
@@ -79,7 +79,7 @@ const FirmaProfilPage = () => {
                 </div>
 
                 {/* technologie */}
-                <div className="profile-card profile-tech">
+                <div className="profile-card card profile-tech">
                     <h2 className="h2-24 profile-card-title">Technológie</h2>
 
                     <div className="profile-tech-tags">
@@ -103,7 +103,7 @@ const FirmaProfilPage = () => {
                 </div>
 
                 {/* kontaktovania pre firmu */}
-                <div className="profile-card profile-contact">
+                <div className="profile-card card profile-contact">
                     <div className="profile-contact-header">
                         <h2 className="h2-24 profile-card-title">
                             Kontaktovania

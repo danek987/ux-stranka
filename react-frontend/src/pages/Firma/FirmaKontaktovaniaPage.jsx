@@ -62,7 +62,7 @@ const FirmaKontaktovaniaPage = () => {
     };
 
     return (
-        <main className="fk-page">
+        <main className="fk-page page">
             <h1 className="display-48">Kontaktovania</h1>
 
             <div className="fk-sort">

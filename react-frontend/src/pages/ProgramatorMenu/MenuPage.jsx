@@ -7,12 +7,12 @@ const MenuPage = () => {
     const navigate = useNavigate();
 
     return (
-        <main className="home">
+        <main className="home page">
             <h1 id="home-title" className="display-48">
                 Stylove profily
             </h1>
 
-            <section className="home-card" aria-labelledby="home-title">
+            <section className="home-card card" aria-labelledby="home-title">
                 <div className="home-actions">
                     <Button
                         variant="primary"

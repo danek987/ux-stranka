@@ -159,6 +159,14 @@
   line-height: var(--lh-auto);
 }
 
+.label-12-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-label-12);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-auto);
+}
+
+
 /* Chart-8 */
 .chart-8 {
   font-family: var(--font-family-primary);
@@ -212,7 +220,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  padding: 0.625rem 1rem;
   border-radius: var(--radius-button-border);
   border: none;
   cursor: pointer;
@@ -249,4 +257,45 @@ body {
   margin-top: 0.5rem;
   color: var(--color-red);
   text-align: center;
+}
+
+/*layout stranky*/
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.page h1{
+  margin-top: var(--spacing-page);
+  margin-bottom: var(--spacing-page);
+}
+
+.card{
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-card-border);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-card-border);
+}
+
+
+/* tablet */
+@media (max-width: 900px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* mobil */
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    padding: var(--card-padding);
+    border-radius: 1rem;
+  }
 }

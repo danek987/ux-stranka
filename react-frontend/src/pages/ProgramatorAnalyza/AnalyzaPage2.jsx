@@ -11,12 +11,12 @@ const AnalyzaPage2 = () => {
     };
 
     return (
-        <main className="analyza2-page">
+        <main className="analyza2-page page">
             <h1 className="analyza2-title display-48">Generovanie profilu</h1>
 
             <div className="analyza2-layout">
                 {/* LEFT PANEL */}
-                <section className="analyza2-left">
+                <section className="analyza2-left card">
                     {/* GitHub blok */}
                     <div className="provider-block">
                         <div className="provider-main">
@@ -54,7 +54,7 @@ const AnalyzaPage2 = () => {
 
 
                 {/* RIGHT PANEL */}
-                <section className="analyza2-right">
+                <section className="analyza2-right card">
                     <div className="analyza2-right-content">
                         <p className="body-medium-16">
                             Načítajte repozitáre z gitu

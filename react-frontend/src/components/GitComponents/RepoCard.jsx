@@ -11,7 +11,7 @@ const RepoCard = ({ icon, title, commits }) => {
             <div className="repo-icon">{icon}</div>
 
             <div className="repo-content">
-                <div className="repo-title chart-10">{title}</div>
+                <div className="repo-title label-12">{title}</div>
                 <div className="repo-count chart-10" style={{ color: "var(--text-secondary)" }}>
                     {commits} commitov
                 </div>

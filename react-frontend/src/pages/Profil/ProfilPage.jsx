@@ -55,25 +55,30 @@ const ProfilPage = () => {
     ];
 
     return (
-        <main className="profile">
+        <main className="profile page">
             <h1 className="display-48">Štýlový profil</h1>
 
             <section className="profile-grid">
                 {/* lava horna karta – identita */}
-                <div className="profile-card profile-summary">
+                <div className="profile-card card profile-summary">
                     <div className="profile-id h1-32">Y8584668</div>
 
                     <div className="profile-github body-medium-16">
-                        <span className="profile-github-icon"></span>
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub"
+                            className="profile-github-icon"
+                        />
                         <span>gitUser12345</span>
                     </div>
+
 
                     <div className="profile-style-badge h3-20">BugFixer</div>
                 </div>
 
                 {/* prava horna karta – donut + legenda */}
-                <div className="profile-card profile-donut-card">
-                    <div className="profile-donut-wrapper">
+                <div className="profile-card card profile-donut-card">
+                <div className="profile-donut-wrapper">
                         <div className="profile-donut">
                             <div className="profile-donut-inner">
                                 <div className="profile-donut-number h1-32">
@@ -89,31 +94,31 @@ const ProfilPage = () => {
                     <div className="profile-legend">
                         <div className="profile-legend-item">
                             <span className="legend-dot legend-dot-perf" />
-                            <span className="chart-8">Perfektívne</span>
-                            <span className="legend-percent chart-8">20%</span>
+                            <span className="label-12-bold">Perfektívne</span>
+                            <span className="legend-percent label-12-bold">20%</span>
                         </div>
                         <div className="profile-legend-item">
                             <span className="legend-dot legend-dot-adapt" />
-                            <span className="chart-8">Adaptívne</span>
-                            <span className="legend-percent chart-8">12%</span>
+                            <span className="label-12-bold">Adaptívne</span>
+                            <span className="legend-percent label-12-bold">12%</span>
                         </div>
                         <div className="profile-legend-item">
                             <span className="legend-dot legend-dot-kor" />
-                            <span className="chart-8">Korektívne</span>
-                            <span className="legend-percent chart-8">57%</span>
+                            <span className="label-12-bold">Korektívne</span>
+                            <span className="legend-percent label-12-bold">57%</span>
                         </div>
                         <div className="profile-legend-item">
                             <span className="legend-dot legend-dot-admin" />
-                            <span className="chart-8">
+                            <span className="label-12-bold">
                                 Administratívne/Ostatné
                             </span>
-                            <span className="legend-percent chart-8">11%</span>
+                            <span className="legend-percent label-12-bold">11%</span>
                         </div>
                     </div>
                 </div>
 
                 {/* technologie */}
-                <div className="profile-card profile-tech">
+                <div className="profile-card card profile-tech">
                     <h2 className="h2-24 profile-card-title">Technológie</h2>
 
                     <div className="profile-tech-tags">
@@ -137,7 +142,7 @@ const ProfilPage = () => {
                 </div>
 
                 {/* statistiky repozitarov */}
-                <div className="profile-card profile-repos">
+                <div className="profile-card card profile-repos">
                     <h2 className="h2-24 profile-card-title">
                         Štatistiky repozitárov
                     </h2>

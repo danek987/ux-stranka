@@ -1,15 +1,37 @@
-/* ===== HORNÝ PANEL ===== */
+/* panel horny */
 .topbar {
     display: flex;
     align-items: center;
-    height: 3.75rem; /* 60px */
+    height: 3.75rem;
     padding: 0 var(--spacing-page);
     background-color: var(--color-primary);
     color: var(--text-whiteText);
-    gap: 1rem; /* 16px */
+    gap: 1rem;
 }
 
-/* ===== IKONA MENU ===== */
+/* lava cast – logo + hamburger */
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* logo vlavo hore */
+.logo-link {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    background: var(--color-black-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white-100);
+    text-decoration: none;
+    font-weight: var(--weight-semibold);
+    font-size: 1.05rem;
+}
+
+/* menu ikona – hamburger button */
 .menu-icon-btn {
     width: 2rem;
     height: 2rem;
@@ -20,27 +42,68 @@
     justify-content: center;
     border: none;
     cursor: pointer;
+    padding: 0;
 }
 
-.menu-icon {
-    font-size: 1.125rem;
-    color: var(--color-white-100);
+/* tri ciarky hamburgeru */
+.menu-icon-lines {
+    position: relative;
+    width: 1.1rem;
+    height: 2px;
+    background-color: var(--color-white-100);
+    border-radius: 999px;
+    transition: 0.2s ease;
 }
 
-/* ===== NAVIGÁCIA ===== */
+.menu-icon-lines::before,
+.menu-icon-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1.1rem;
+    height: 2px;
+    background-color: var(--color-white-100);
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.menu-icon-lines::before {
+    top: -0.3rem;
+}
+
+.menu-icon-lines::after {
+    top: 0.3rem;
+}
+
+/* stav otvoreneho menu -> X */
+.menu-icon-btn.is-open .menu-icon-lines {
+    background-color: transparent;
+}
+
+.menu-icon-btn.is-open .menu-icon-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-icon-btn.is-open .menu-icon-lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* navigacia */
 .topbar-nav {
     display: flex;
     align-items: center;
-    gap: 1rem; /* 16px */
+    gap: 1rem;
     flex: 1;
     justify-content: center;
 }
 
-/* základ tlačidiel */
+/* zaklad tlacidiel */
 .nav-link {
     font-size: var(--font-body-medium-16);
-    padding: 0.625rem 0.625rem; /* 10px */
-    border-radius: 0.625rem;   /* 10px */
+    padding: 0.625rem 0.625rem;
+    border-radius: 0.625rem;
     color: var(--color-white-100);
     text-decoration: none;
     transition: 0.15s ease;
@@ -59,10 +122,16 @@
     font-weight: var(--weight-semibold);
 }
 
-/* ===== ODHLÁSIT TLACIDLO ===== */
+/* prava cast */
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* tlacitko odhlasit */
 .logout-btn {
-    padding: 0.625rem 1rem; /* 10px + horizontal extra */
-    border-radius: 0.625rem; /* 10px */
+    padding: 0.625rem 1rem;
+    border-radius: 0.625rem;
     background-color: var(--color-secondary);
     border: none;
     font-size: var(--font-body-medium-16);
@@ -71,18 +140,39 @@
     font-weight: var(--weight-medium);
 }
 
-/* responzivita */
+/* hambutger icon sa zobrazi len pri mensej obrazovke */
+@media (min-width: 601px) {
+    .menu-icon-btn {
+        display: none;
+    }
+}
+
+/* responzivita – mobil */
 @media (max-width: 600px) {
     .topbar {
         flex-wrap: wrap;
         height: auto;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
+        justify-content: space-between;
     }
 
+    /* navigacia na mobile defaultne schovana */
     .topbar-nav {
-        flex-basis: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0.25rem;
+        margin-top: 0.5rem;
+    }
+
+    /* ked je hamburger otvoreny, zobraz menu */
+    .topbar-nav.is-open {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
     }
 }

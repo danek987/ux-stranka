@@ -55,12 +55,12 @@ const AnalyzaPage3 = () => {
     };
 
     return (
-        <main className="analyza2-page">
+        <main className="analyza2-page page">
             <h1 className="analyza2-title display-48">Generovanie profilu</h1>
 
             <div className="analyza2-layout">
                 {/* lavy panel */}
-                <section className="analyza2-left">
+                <section className="analyza2-left card">
                     <div className="provider-block">
                         <div className="provider-main">
                             <span className="provider-name h1-32">GitHub</span>
@@ -89,7 +89,7 @@ const AnalyzaPage3 = () => {
                 </section>
 
                 {/* pravy panel */}
-                <section className="analyza2-right analyza-loaded-right">
+                <section className="analyza2-right card analyza-loaded-right">
                     <div className="analyza-loaded-top">
                         <div className="analyza-loaded-commits body-medium-16-auto">
                             Počet alokovaných commitov: {allocatedCommits} / 350

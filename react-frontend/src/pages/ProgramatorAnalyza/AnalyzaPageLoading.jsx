@@ -25,12 +25,12 @@ const AnalyzaPageLoading = () => {
     }, [navigate]);
 
     return (
-        <main className="analyza-loading-page">
+        <main className="analyza-loading-page page">
             <h1 className="analyza-loading-title display-48">
                 Analýza
             </h1>
 
-            <section className="analyza-loading-card">
+            <section className="analyza-loading-card card">
                 <p className="loading-commits h3-20">
                     Spracované commity: {processedCommits}/{totalCommits}
                 </p>

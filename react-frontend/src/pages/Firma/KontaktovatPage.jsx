@@ -70,10 +70,10 @@ const KontaktovatPage = () => {
     };
 
     return (
-        <main className="contact-form">
+        <main className="page">
             <h1 className="display-48">Kontaktovať</h1>
 
-            <section className="contact-form-card">
+            <section className="contact-form-card card">
                 <p className="contact-form-id h2-24">
                     ID: <span className="contact-form-id-value">{id || "X47859"}</span>
                 </p>

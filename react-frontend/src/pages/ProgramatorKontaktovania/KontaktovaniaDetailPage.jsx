@@ -45,7 +45,7 @@ const KontaktovanieDetailPage = () => {
     };
 
     return (
-        <main className="contacts-page">
+        <main className="page">
             <h1 className="display-48">Detail kontaktovania</h1>
 
             <section className="contacts-card">

@@ -10,13 +10,13 @@ const AnalyzaPage = () => {
         navigate("/tokeny");
     };
     return (
-        <main className="analyza-page">
+        <main className="analyza-page page">
             <h1 className="analyza-title display-48">
                 Generovanie Profilu
             </h1>
 
             <section
-                className="analyza-card"
+                className="analyza-card card"
                 aria-label="Nastavenie tokenov pre služby"
             >
                 <div className="providers-list">

@@ -1,10 +1,6 @@
-.analyza2-page {
+.page.analyza2-page {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2.5rem;
     background-color: var(--color-background);
-    align-items: center;
 }
 
 /* nadpis hore */
@@ -19,25 +15,16 @@
     gap: 2rem;
     width: 100%;
     max-width: 1400px;
-
     /* aby panely vedeli spadnut pod seba */
     flex-wrap: wrap;
     justify-content: center;
 }
 
 /* lavy panel s poskytovatelmi */
-.analyza2-left {
+.card.analyza2-left {
     min-width: 250px;
     max-width: 367px;
     width: 100%;
-
-    background-color: var(--color-card-bg);
-    border-radius: var(--radius-card-border);
-    border: 1px solid var(--color-card-border);
-    box-shadow: var(--shadow-card);
-
-    padding: 1.875rem;
-
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -61,17 +48,10 @@
 
 
 /* pravy panel s obsahom */
-.analyza2-right {
+.card.analyza2-right {
     flex: 1 1 480px;
     min-width: 150px;
     max-width: 910px;
-
-    background-color: var(--color-card-bg);
-    border-radius: var(--radius-card-border);
-    border: 1px solid var(--color-card-border);
-    box-shadow: var(--shadow-card);
-
-    padding: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;

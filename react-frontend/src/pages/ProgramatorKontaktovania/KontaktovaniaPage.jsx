@@ -27,7 +27,7 @@ const KontaktovaniaPage = () => {
     };
 
     return (
-        <main className="contacts-page">
+        <main className="page">
             <h1 className="display-48">Kontaktovania</h1>
 
             <section className="contacts-list">

@@ -1,10 +1,6 @@
-.analyza2-page {
+.page.analyza2-page {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2.5rem;
     background-color: var(--color-background);
-    align-items: center;
 }
 
 /* nadpis hore */
@@ -26,31 +22,18 @@
 }
 
 /* lavy panel s poskytovatelmi */
-.analyza2-left {
+.card.analyza2-left {
     min-width: 250px;
     max-width: 367px;
     width: 100%;
-
-    background-color: var(--color-card-bg);
-    border-radius: var(--radius-card-border);
-    border: 1px solid var(--color-card-border);
-    box-shadow: var(--shadow-card);
-
-    padding: 1.875rem;
-
     max-height: 600px;
-
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
-
     align-items: center;
     text-align: center;
-
     flex-shrink: 0;
 }
-
 
 /* pomocny blok – ak by si chcel kartu vo vnutri lava panelu */
 .analyza2-provider-block {
@@ -65,17 +48,10 @@
 }
 
 /* pravy panel s obsahom – zakladny stav */
-.analyza2-right {
+.card.analyza2-right {
     flex: 1 1 480px;
     min-width: 150px;
     max-width: 910px;
-
-    background-color: var(--color-card-bg);
-    border-radius: var(--radius-card-border);
-    border: 1px solid var(--color-card-border);
-    box-shadow: var(--shadow-card);
-
-    padding: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,28 +131,32 @@
     gap: 2.1875rem;
 }
 
-/* horna cast – commits + nastavenia */
+/*  HORE: commits + nastavenia  */
+
 .analyza-loaded-top {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
 }
 
 .analyza-loaded-commits {
     white-space: nowrap;
 }
 
-/* checkboxy, radio a slider vedla seba */
+/* blok checkboxy + slider */
 .analyza-loaded-options {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    text-align: center;
 }
 
+/* checkbox label */
 .loaded-option {
     display: inline-flex;
     align-items: center;
@@ -187,27 +167,40 @@
     margin: 0;
 }
 
-/* slider blok */
+/* slider blok – drzi pokope */
 .loaded-slider {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
-.loaded-slider input[type="range"] {
-    width: 140px;
-}
-
-.loaded-slider-label {
-    white-space: nowrap;
-}
-
+.loaded-slider-label,
 .loaded-slider-range {
     white-space: nowrap;
 }
 
-/* stred – text + tlacidlo Spustit */
+.loaded-slider input[type=range] {
+    width: 140px;
+}
+
+/* responzivne zmensenie, slider  */
+@media (max-width: 480px) {
+    .loaded-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loaded-slider input[type=range] {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+
+/*  STRED: text + Spustit */
+
 .analyza-loaded-center {
     display: flex;
     flex-direction: column;
@@ -241,48 +234,45 @@
     width: 100%;
 }
 
-/* mobilne spravanie praveho panelu */
-@media (max-width: 768px) {
+/*  RESPONZIVITA  */
+
+/* stredne displeje – top blok centrovat, slider roztiahnut, ale drzat pokope */
+@media (max-width: 900px) {
     .analyza-loaded-top {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .analyza-loaded-commits {
+        white-space: normal;
     }
 
     .analyza-loaded-options {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
+    .loaded-slider input[type="range"] {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+/* mensie displeje – slider pod sebou */
+@media (max-width: 480px) {
+    .loaded-slider {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* mobilne spravanie praveho panelu (ostatne veci) */
+@media (max-width: 768px) {
     .analyza-loaded-sort {
         text-align: left;
     }
 
     .repo-card {
         border-radius: 16px;
-    }
-}
-
-/* responzivna uprava pre uzsie displeje */
-@media (max-width: 900px) {
-    .analyza-loaded-top {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .analyza-loaded-commits {
-        white-space: normal;     /* moze sa zalomit do viac riadkov */
-    }
-
-    .analyza-loaded-options {
-        justify-content: flex-start;
-    }
-
-    .loaded-slider {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .loaded-slider input[type="range"] {
-        width: 100%;             /* slider cez celu sirku vpravo */
-        max-width: 260px;
     }
 }

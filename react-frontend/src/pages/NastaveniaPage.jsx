@@ -66,11 +66,11 @@ const NastaveniaPage = () => {
     };
 
     return (
-        <main className="settings">
+        <main className="settings page">
             <h1 className="display-48">Nastavenia</h1>
 
             {/* sekcia zmena hesla */}
-            <section className="settings-card">
+            <section className="settings-card card">
                 <h2 className="h2-24 settings-section-title">Zmena hesla</h2>
 
                 <form className="settings-form" onSubmit={handlePasswordSubmit}>
@@ -102,7 +102,7 @@ const NastaveniaPage = () => {
             </section>
 
             {/* sekcia aliasy */}
-            <section className="settings-card">
+            <section className="settings-card card">
                 <h2 className="h2-24 settings-section-title">Aliasy</h2>
 
                 <div className="settings-alias-list">
@@ -135,7 +135,7 @@ const NastaveniaPage = () => {
             </section>
 
             {/* sekcia zmazanie uctu */}
-            <section className="settings-card settings-card-delete">
+            <section className="settings-card card settings-card-delete">
                 <h2 className="h2-24 settings-section-title">Zmazanie účtu</h2>
 
                 <label className="settings-delete-check body-medium-16-auto">

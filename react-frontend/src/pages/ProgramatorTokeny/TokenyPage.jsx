@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../index.css";
 import "./TokenyPage.css";
 
 import Button from "../../components/Button/Button";
@@ -78,22 +79,25 @@ const TokenyPage = () => {
     };
 
     return (
-        <main className="tokens">
+        <main className="tokens page">
             <h1 className="display-48">Tokeny</h1>
 
-            <section className="tokens-card" aria-label="Sprava tokenov">
+            <section className="card tokens-card" aria-label="Sprava tokenov">
                 {/* horna cast s poskytovatelmi */}
                 <div className="tokens-providers" aria-label="Git integracie">
                     {/* GitHub */}
                     <article className="token-provider">
                         <div className="token-provider-header">
                             <div className="token-provider-icon" aria-hidden="true">
-                                🐱
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                    alt=""
+                                />
                             </div>
                             <span className="h2-24">GitHub</span>
                         </div>
 
-                        <ValidityBadge status={isGithubValid ? "platny" : "neplatny"} />
+                        <ValidityBadge status={isGithubValid ? "platny" : "neplatny"}/>
 
                         {isGithubValid ? (
                             <Button
@@ -103,7 +107,7 @@ const TokenyPage = () => {
                                 type="button"
                                 onClick={() => handleDisconnect("github")}
                             >
-                                Odpojit
+                            Odpojit
                             </Button>
                         ) : (
                             <Button
@@ -120,14 +124,19 @@ const TokenyPage = () => {
 
                     {/* GitLab */}
                     <article className="token-provider">
+
                         <div className="token-provider-header">
                             <div className="token-provider-icon" aria-hidden="true">
-                                🦊
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+                                    alt=""
+                                />
                             </div>
                             <span className="h2-24">GitLab</span>
                         </div>
 
-                        <ValidityBadge status={isGitlabValid ? "platny" : "neplatny"} />
+
+                        <ValidityBadge status={isGitlabValid ? "platny" : "neplatny"}/>
 
                         {isGitlabValid ? (
                             <Button

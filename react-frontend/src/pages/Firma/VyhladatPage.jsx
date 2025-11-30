@@ -34,10 +34,10 @@ const VyhladatPage = () => {
     };
 
     return (
-        <main className="search">
+        <main className="search page">
             <h1 className="display-48">Vyhľadať</h1>
 
-            <section className="search-card" aria-label="Vyhľadanie programátora">
+            <section className="search-card card" aria-label="Vyhľadanie programátora">
                 <p className="body-small-14 search-subtitle">
                     Zadajte platné ID programátora
                 </p>

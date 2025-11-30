@@ -33,12 +33,12 @@
 
 /* novy kontakt -> modra karta */
 .contact-card-new {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    background-color: color-mix(in srgb, var(--color-secondary) 40%, transparent);
+    border-color: color-mix(in srgb, var(--color-secondary) 40%, transparent);
 }
 
-/* na modrom pozadi tmavsi text */
 .contact-card-new .contact-header,
 .contact-card-new .contact-body {
     color: var(--text-primary);
 }
+

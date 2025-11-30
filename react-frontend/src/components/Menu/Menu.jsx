@@ -1,9 +1,13 @@
 import React from "react";
 import "./Menu.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 
 const Menu = ({ role = "programator" }) => {
     const location = useLocation();
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    // domovska cesta podľa roly
+    const homePath = role === "firma" ? "/firma" : "/";
 
     const itemsProgramator = [
         {
@@ -20,14 +24,16 @@ const Menu = ({ role = "programator" }) => {
     const itemsFirma = [
         {
             to: "/vyhladat",
-            label: "Vyhľadavanie",
-            isActive: location.pathname === "/vyhladat" ||
+            label: "Vyhladavanie",
+            isActive:
+                location.pathname === "/vyhladat" ||
                 location.pathname.startsWith("/firma/profil/")
         },
         {
             to: "/kontaktovaniaFirma",
             label: "Kontakt",
-            isActive: location.pathname === "/kontaktovaniaFirma" ||
+            isActive:
+                location.pathname === "/kontaktovaniaFirma" ||
                 location.pathname.startsWith("/kontaktovat/")
         },
         {
@@ -37,16 +43,34 @@ const Menu = ({ role = "programator" }) => {
         }
     ];
 
-
     const items = role === "firma" ? itemsFirma : itemsProgramator;
 
     return (
         <header className="topbar">
             <div className="topbar-left">
-                <button className="menu-icon-btn">Q</button>
+                {/* ikonka stranky vlavo hore */}
+                <Link
+                    to={homePath}
+                    className="logo-link"
+                    onClick={() => setIsOpen(false)}
+                >
+                    Q
+                </Link>
+
+                {/* hamburger – viditelny len na mobile cez CSS */}
+                <button
+                    className={
+                        "menu-icon-btn" + (isOpen ? " is-open" : "")
+                    }
+                    onClick={() => setIsOpen((open) => !open)}
+                    aria-label="Menu"
+                    aria-expanded={isOpen}
+                >
+                    <span className="menu-icon-lines" />
+                </button>
             </div>
 
-            <nav className="topbar-nav">
+            <nav className={"topbar-nav" + (isOpen ? " is-open" : "")}>
                 {items.map((item) => (
                     <NavLink
                         key={item.to}
@@ -55,6 +79,7 @@ const Menu = ({ role = "programator" }) => {
                             "nav-link" +
                             ((item.isActive || isActive) ? " is-active" : "")
                         }
+                        onClick={() => setIsOpen(false)}
                     >
                         {item.label}
                     </NavLink>
