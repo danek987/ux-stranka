@@ -63,7 +63,7 @@ const KontaktovatPage = () => {
         };
 
         // sem pride realne volanie API
-        console.log("Odoslat kontaktovanie:", payload);
+        console.log("Odoslať kontaktovanie:", payload);
 
         // presmerovanie na zoznam kontaktovani firmy
         navigate("/kontaktovaniaFirma");

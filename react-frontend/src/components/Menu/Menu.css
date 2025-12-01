@@ -9,7 +9,7 @@
     gap: 1rem;
 }
 
-/* lava cast – logo + hamburger */
+/* lava cast – logo + hamburger(pri mensich obrazovkach) */
 .topbar-left {
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* ACTIVE stav */
+/* aktivny stav */
 .nav-link.is-active {
     background-color: var(--color-secondary);
     color: var(--text-primary);
@@ -167,7 +167,7 @@
         margin-top: 0.5rem;
     }
 
-    /* ked je hamburger otvoreny, zobraz menu */
+    /* ked je hamburger otvoreny, zobrazi sa menu */
     .topbar-nav.is-open {
         display: flex;
     }

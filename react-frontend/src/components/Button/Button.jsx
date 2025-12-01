@@ -1,8 +1,8 @@
 import React from "react";
 import "./Button.css";
 
-// variant: "primary" | "secondary"
-// size: "large" | "small"
+// variant: "primary" / "secondary"
+// size: "large" / "small"
 const Button = ({ variant = "primary", size = "large", children, className = "", ...props }) => {
     const classes = [
         "btn-base",

@@ -1,5 +1,5 @@
 import React from "react";
-import "../ProgramatorMenu/MenuPage.css"; // zdieľa rovnaké CSS
+import "../ProgramatorMenu/MenuPage.css";
 import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 

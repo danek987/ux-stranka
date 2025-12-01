@@ -107,7 +107,7 @@ const TokenyPage = () => {
                                 type="button"
                                 onClick={() => handleDisconnect("github")}
                             >
-                            Odpojit
+                            Odpojiť
                             </Button>
                         ) : (
                             <Button
@@ -146,7 +146,7 @@ const TokenyPage = () => {
                                 type="button"
                                 onClick={() => handleDisconnect("gitlab")}
                             >
-                                Odpojit
+                                Odpojiť
                             </Button>
                         ) : (
                             <Button

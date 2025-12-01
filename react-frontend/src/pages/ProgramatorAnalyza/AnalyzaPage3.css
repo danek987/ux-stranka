@@ -15,8 +15,6 @@
     gap: 2rem;
     width: 100%;
     max-width: 1400px;
-
-    /* aby panely vedeli spadnut pod seba */
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -35,7 +33,7 @@
     flex-shrink: 0;
 }
 
-/* pomocny blok – ak by si chcel kartu vo vnutri lava panelu */
+/* pomocny blok  */
 .analyza2-provider-block {
     background-color: white;
     padding: 1.25rem 1rem;
@@ -87,7 +85,6 @@
     background-repeat: no-repeat;
 }
 
-/* ak pridavas className="badge" na ValidityBadge */
 .badge {
     width: 100%;
 }
@@ -101,7 +98,7 @@
     background-image: url("https://about.gitlab.com/images/press/logo/svg/gitlab-icon-rgb.svg");
 }
 
-/* jeden riadok poskytovatela – ak by sa niekde pouzilo */
+/* jeden riadok poskytovatela */
 .provider-row2 {
     display: flex;
     align-items: center;
@@ -131,8 +128,7 @@
     gap: 2.1875rem;
 }
 
-/*  HORE: commits + nastavenia  */
-
+/*  V hornej casti: commits + nastavenia  */
 .analyza-loaded-top {
     display: flex;
     flex-direction: column;
@@ -199,8 +195,7 @@
 }
 
 
-/*  STRED: text + Spustit */
-
+/*  V strede: text + Spustit */
 .analyza-loaded-center {
     display: flex;
     flex-direction: column;
@@ -234,9 +229,8 @@
     width: 100%;
 }
 
-/*  RESPONZIVITA  */
 
-/* stredne displeje – top blok centrovat, slider roztiahnut, ale drzat pokope */
+/* stredne displeje – top blok centrovat, slider roztiahnut(pokope) */
 @media (max-width: 900px) {
     .analyza-loaded-top {
         flex-direction: column;

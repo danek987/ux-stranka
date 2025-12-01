@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./KontaktovaniaPage.css";
 import UserContactCard from "../../components/Kontaktovania/UserContactCard";
 
+//udaje na zobrazenie kariet
 const MOCK_KONTAKTY = [
     {
         id: 1,

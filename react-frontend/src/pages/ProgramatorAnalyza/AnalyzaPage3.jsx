@@ -22,6 +22,7 @@ const AnalyzaPage3 = () => {
     const [selectedRepos, setSelectedRepos] = useState({});
     const [showError, setShowError] = useState(false);
 
+    // stlacanie kariet repozitarov
     const toggleRepo = (id) => {
         setSelectedRepos((prev) => {
             const next = { ...prev, [id]: !prev[id] };

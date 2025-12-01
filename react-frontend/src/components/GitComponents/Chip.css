@@ -11,7 +11,7 @@
     box-shadow: var(--shadow-card);
 }
 
-/* Text v chip – styl .mono-16 */
+/* Text v chip – styl .mono-16(v chip.jsx nasteveny) */
 .chip-text {
     color: var(--text-secondary);
 }
@@ -21,14 +21,11 @@
     background: transparent;
     border: none;
     cursor: pointer;
-
     font-size: 1.25rem;
     line-height: 1;
     color: var(--color-red);
-
     padding: 0.1rem;
     border-radius: 0.3rem;
-
     transition: color 0.15s ease, transform 0.1s ease;
 }
 

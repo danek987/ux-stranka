@@ -29,7 +29,7 @@ const VyhladatPage = () => {
 
         setError("");
 
-        // PRESMEROVANIE NA KONTAKTOVANIE
+        //presmerovanie na stranku kontaktovania
         navigate(`/firma/profil/${programmerId.trim()}`);
     };
 

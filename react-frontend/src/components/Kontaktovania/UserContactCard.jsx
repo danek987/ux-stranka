@@ -19,7 +19,7 @@ const UserContactCard = ({
     return (
         <div className={className}>
 
-            {/* Horný blok: Firma vľavo + Info vpravo hore ak je správa */}
+            {/* Horny blok: Firma vlavo + Info vpravo hore ak je sprava */}
             <div className="uc-top-row">
                 <div className="uc-header h3-20">{firma}</div>
 
@@ -32,7 +32,7 @@ const UserContactCard = ({
                 )}
             </div>
 
-            {/* Info pod sebou ak nie je správa */}
+            {/* Info pod sebou ak nie je sprava */}
             {!sprava && (
                 <div className="uc-info body-medium-16">
                     <div>Dátum a čas: {datumCas}</div>
@@ -41,14 +41,14 @@ const UserContactCard = ({
                 </div>
             )}
 
-            {/* Správa */}
+            {/* Sprava */}
             {sprava && (
                 <div className="uc-message body-medium-16">
                     {sprava}
                 </div>
             )}
 
-            {/* Akcie */}
+            {/* Akcie podla varianty */}
             <div className="uc-actions">
                 {!sprava && (
                     <>

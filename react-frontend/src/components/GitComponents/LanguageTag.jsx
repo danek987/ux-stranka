@@ -2,8 +2,8 @@ import React from "react";
 import "./LanguageTag.css";
 
 // jednoduchy tag pre programovaci jazyk
-// text = nazov jazyka (Java, Python...)
-// iconUrl = url na ikonku jazyka
+// text - nazov jazyka (Java, Python...)
+// iconUrl - url na ikonku jazyka
 const LanguageTag = ({ text, iconUrl, alt }) => {
     return (
         <div className="language-tag">

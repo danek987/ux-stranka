@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="Footer">
       <span className="body-small-14">
-        © 2025 Stylove profily – prototyp
+        © Daniel Oľšavský 2025 Štýlove profily – prototyp
       </span>
         </footer>
     );

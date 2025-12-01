@@ -9,7 +9,7 @@ const MenuPage = () => {
     return (
         <main className="home page">
             <h1 id="home-title" className="display-48">
-                Stylove profily
+                Štýlové profily
             </h1>
 
             <section className="home-card card" aria-labelledby="home-title">
@@ -20,7 +20,7 @@ const MenuPage = () => {
                         className="home-btn"
                         onClick={() => navigate("/analyza1")}
                     >
-                        Analyza
+                        Generovanie Profilu
                     </Button>
 
                     <Button
@@ -38,7 +38,7 @@ const MenuPage = () => {
                         className="home-btn"
                         onClick={() => navigate("/kontaktovania")}
                     >
-                        Kontakt
+                        Kontaktovania
                     </Button>
 
                     <Button

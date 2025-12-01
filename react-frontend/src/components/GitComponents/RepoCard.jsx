@@ -2,9 +2,9 @@ import React from "react";
 import "./RepoCard.css";
 
 // props:
-// icon → JSX (svg / emoji)
-// title → string
-// commits → number
+// icon - JSX (svg / emoji)
+// title - string
+// commits - pocet
 const RepoCard = ({ icon, title, commits }) => {
     return (
         <div className="repo-card">

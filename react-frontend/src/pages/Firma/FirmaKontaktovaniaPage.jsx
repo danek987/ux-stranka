@@ -4,6 +4,7 @@ import ContactCard from "../../components/Kontaktovania/ContactCard";
 import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 
+//zobrazovanie udaje v kartach
 const MOCK = [
     {
         kontaktId: "Y8586565",
@@ -37,6 +38,7 @@ const FirmaKontaktovaniaPage = () => {
 
     const navigate = useNavigate();
 
+    //handlery
     const handleSort = () => {
         setSortAsc(!sortAsc);
 

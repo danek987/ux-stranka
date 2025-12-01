@@ -67,8 +67,6 @@ const NastaveniaPageFirma = () => {
         event.preventDefault();
 
         console.log("Ulozit preferencie", preferences);
-        // ak chces, mozes po uspesnom ulozeni vycistit:
-        // setPreferences("");
     };
 
     // zmazanie uctu

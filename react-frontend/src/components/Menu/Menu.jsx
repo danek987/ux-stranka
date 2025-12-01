@@ -6,7 +6,7 @@ const Menu = ({ role = "programator" }) => {
     const location = useLocation();
     const [isOpen, setIsOpen] = React.useState(false);
 
-    // domovska cesta podľa roly
+    // domovska cesta podla roly
     const homePath = role === "firma" ? "/firma" : "/";
 
     const itemsProgramator = [
@@ -57,7 +57,7 @@ const Menu = ({ role = "programator" }) => {
                     Q
                 </Link>
 
-                {/* hamburger – viditelny len na mobile cez CSS */}
+                {/* hamburger – viditelny na mensic obrazovkach  */}
                 <button
                     className={
                         "menu-icon-btn" + (isOpen ? " is-open" : "")

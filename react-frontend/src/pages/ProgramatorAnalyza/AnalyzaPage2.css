@@ -15,7 +15,6 @@
     gap: 2rem;
     width: 100%;
     max-width: 1400px;
-    /* aby panely vedeli spadnut pod seba */
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -105,8 +104,6 @@
 
     gap: 1.25rem;
 }
-
-
 
 /* vertikalny blok pre GitHub / GitLab */
 .provider-block {

@@ -1,4 +1,4 @@
-/* zoradenie podľa dátumu */
+/* zoradenie podla datumu */
 .fk-sort {
     width: 100%;
     max-width: 950px;
@@ -18,7 +18,7 @@
     text-decoration: underline;
 }
 
-/* grid kariet – presne ako na fotke */
+/* grid viacerych kariet na obrazovke */
 .fk-grid {
     width: 100%;
     max-width: 950px;
@@ -28,7 +28,7 @@
     margin-bottom: 2rem;
 }
 
-/* tlacidlo Menu naspodku */
+/* tlacidlo menu pod kartami */
 .fk-menu {
     margin-top: 1.5rem;
     margin-bottom: 3rem;

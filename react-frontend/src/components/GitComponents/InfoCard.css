@@ -1,3 +1,4 @@
+/* Card okolo komponentu*/
 .info-card {
     background-color: var(--color-card-bg);
     border: 1px solid var(--color-card-border);
@@ -7,11 +8,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-
-/* Nadpis */
-.info-title {
-
 }
 
 /* Hodnota */

@@ -3,13 +3,15 @@
     max-width: 700px;
     width: 100%;
     text-align: center;
+    margin: 0 auto;
 }
 
-/* vertikalne menu tlacidiel */
+/* tlacitka v menu*/
 .home-actions {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
+    align-items: center;
 }
 
 .home-btn {
@@ -18,4 +20,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     border-radius: 0.75rem;
+    max-width: 28.125rem;
+    display: flex;
+    justify-content: center;
 }
