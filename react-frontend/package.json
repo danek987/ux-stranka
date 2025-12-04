@@ -39,5 +39,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://danek987.github.io/ux-stranka/"
+  "homepage": "https://danek987.github.io/ux-stranka/",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
