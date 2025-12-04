@@ -12,7 +12,7 @@ const Menu = ({ role = "programator" }) => {
     const itemsProgramator = [
         {
             to: "/analyza1",
-            label: "Analyza",
+            label: "Analýza",
             isActive: location.pathname.startsWith("/analyza")
         },
         { to: "/profil", label: "Profil" },
@@ -24,7 +24,7 @@ const Menu = ({ role = "programator" }) => {
     const itemsFirma = [
         {
             to: "/vyhladat",
-            label: "Vyhladavanie",
+            label: "Vyhľadávanie",
             isActive:
                 location.pathname === "/vyhladat" ||
                 location.pathname.startsWith("/firma/profil/")
@@ -87,7 +87,7 @@ const Menu = ({ role = "programator" }) => {
             </nav>
 
             <div className="topbar-right">
-                <button className="logout-btn">Odhlasit</button>
+                <button className="logout-btn">Odhlásiť</button>
             </div>
         </header>
     );

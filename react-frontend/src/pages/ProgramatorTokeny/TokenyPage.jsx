@@ -54,7 +54,7 @@ const TokenyPage = () => {
         event.preventDefault();
 
         if (!manualToken.trim() || !manualName.trim()) {
-            setError("Treba vyplnit potrebne udaje.");
+            setError("Treba vyplniť potrebné údaje.");
             return;
         }
 
@@ -163,7 +163,7 @@ const TokenyPage = () => {
                 </div>
 
                 <p className="tokens-divider body-small-14">
-                    Alebo pripojit manualne
+                    Alebo pripojiť manuálne
                 </p>
 
                 {/* formular na manualne pridanie */}
@@ -230,7 +230,7 @@ const TokenyPage = () => {
                         size="large"
                         className="tokens-submit"
                     >
-                        Pridat Token
+                        Pridať Token
                     </Button>
 
                     {hasAnyValid && (
@@ -241,7 +241,7 @@ const TokenyPage = () => {
                             className="tokens-analyze"
                             onClick={handleGoToAnalyze}
                         >
-                            Prejst k analyze
+                            Prejsť k analýze
                         </Button>
                     )}
                 </form>

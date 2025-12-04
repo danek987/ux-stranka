@@ -95,7 +95,7 @@ const ComponentsPlayground = () => {
                         placeholder="Dobrý den, radi by sme sa s vami spojili..."
                     />
 
-                    <DateField label="Datum a cas" />
+                    <DateField label="Dátum a čas" />
                 </div>
             </section>
 

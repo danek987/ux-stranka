@@ -39,10 +39,10 @@ const ContactCard = ({
         return (
             <>
                 <Button variant="primary" size="small" onClick={onComplete}>
-                    Dokoncit
+                    Dokončiť
                 </Button>
                 <Button variant="primary" size="small" onClick={onCancel}>
-                    Zrusit
+                    Zrušiť
                 </Button>
             </>
         );
@@ -62,7 +62,7 @@ const ContactCard = ({
 
             {/* detaily kontaktovania */}
             <div className="contact-body body-medium-16">
-                <div>Datum a cas: {datumCas}</div>
+                <div>Dátum a čas: {datumCas}</div>
                 <div>Typ: {typ}</div>
                 <div>Miesto: {miesto}</div>
                 <div>Stav: {stav}</div>

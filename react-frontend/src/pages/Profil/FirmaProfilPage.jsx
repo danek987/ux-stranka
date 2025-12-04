@@ -30,7 +30,11 @@ const FirmaProfilPage = () => {
                     <div className="profile-id h1-32">{programmerId}</div>
 
                     <div className="profile-github body-medium-16">
-                        <span className="profile-github-icon"></span>
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub"
+                            className="profile-github-icon"
+                        />
                         <span>gitUser12345</span>
                     </div>
 
@@ -41,7 +45,7 @@ const FirmaProfilPage = () => {
                 <div className="profile-card card profile-donut-card">
                     <div className="profile-donut-wrapper">
                         <div className="profile-donut">
-                            <div className="profile-donut-inner">
+                        <div className="profile-donut-inner">
                                 <div className="profile-donut-number h1-32">
                                     {totalCommits}
                                 </div>

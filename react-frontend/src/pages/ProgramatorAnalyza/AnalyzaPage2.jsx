@@ -48,7 +48,7 @@ const AnalyzaPage2 = () => {
                         variant="primary"
                         onClick = {handleGoToAnalyze}
                     >
-                        Načitať
+                        Načítať
                     </Button>
                 </section>
 
