@@ -18,7 +18,8 @@ const Menu = ({ role = "programator" }) => {
         { to: "/profil", label: "Profil" },
         { to: "/tokeny", label: "Tokeny" },
         { to: "/kontaktovania", label: "Kontaktovania" },
-        { to: "/nastavenia", label: "Nastavenia" },
+        //{ to: "/nastavenia", label: "Nastavenia" },
+        { to: "/firma", label: "Nastavenia" },
     ];
 
     const itemsFirma = [
