@@ -7,7 +7,7 @@ const Menu = ({ role = "programator" }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     // domovska cesta podla roly
-    const homePath = role === "firma" ? "/firma" : "/";
+    const homePath = role === "firma" ? "/firma" : "/firma";
 
     const itemsProgramator = [
         {
