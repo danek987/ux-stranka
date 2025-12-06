@@ -53,7 +53,7 @@ function App() {
 
                 {/* nastavenia */}
                 {/* programator */}
-                <Route path="/nastavenia" element={<NastaveniaPage />} />
+                <Route path="/nastavenia" element={<FirmaMenuPage />} />
                 {/* firma */}
                 <Route path="/nastaveniaFirma" element={<NastaveniaPageFirma />} />
 
